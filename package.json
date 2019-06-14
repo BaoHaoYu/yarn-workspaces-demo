@@ -9,6 +9,11 @@
     "tslint": "tslint --fix packages/**/*{.ts,.tsx}",
     "stylelint": "stylelint --fix packages/**/*.scss"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run tslint && npm run stylelint"
+    }
+  },
   "devDependencies": {
     "@types/fs-extra": "^7.0.0",
     "fs-extra": "^8.0.1",
