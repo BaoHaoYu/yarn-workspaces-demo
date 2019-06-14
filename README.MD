@@ -8,8 +8,8 @@ rollup + yarn workspaces 管理多个包
 
 # TODO 
 - `lerna`
-- `tslint` 
-- `stylelint`
+- `tslint`  √
+- `stylelint`  √
 - `storybook`
 - `jest` 
 - `push to npm`
