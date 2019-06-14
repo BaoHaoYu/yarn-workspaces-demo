@@ -1,0 +1,16 @@
+{
+  "name": "p2",
+  "version": "0.0.1",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.ems.js",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/react": "16.8.20",
+    "@types/react-dom": "16.8.4"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "p1": "^0.0.1"
+  }
+}

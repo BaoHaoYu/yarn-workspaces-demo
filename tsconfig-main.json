@@ -1,0 +1,25 @@
+{
+  "extends": "./config/tsconfig.common.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "baseUrl": ".",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es5",
+      "es2015.promise",
+      "es2015.collection",
+      "es2015.iterable"
+    ]
+  },
+  "include": [
+    "packages",
+    "stories"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
+  ]
+}

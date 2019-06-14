@@ -1,0 +1,24 @@
+{
+  "name": "yarn-workspaces-demo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js -w"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^7.0.0",
+    "fs-extra": "^8.0.1",
+    "globby": "^9.2.0",
+    "rollup": "^1.15.3",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-node-resolve": "^5.0.2",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.2",
+    "webpack": "^4.34.0"
+  }
+}

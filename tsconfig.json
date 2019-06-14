@@ -1,0 +1,22 @@
+{
+  "extends": "./config/tsconfig.common.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "baseUrl": "."
+  },
+  "include": [
+    "webpack-ts",
+    "config",
+    "server",
+    "packages",
+    ".storybook",
+    "stories",
+    "util"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
+  ]
+}
