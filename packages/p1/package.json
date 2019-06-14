@@ -1,9 +1,11 @@
 {
-  "name": "p1",
+  "name": "@bhy/p1",
   "version": "0.0.1",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.ems.js",
   "types": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p1",
   "devDependencies": {
     "@types/react": "16.8.20",
     "@types/react-dom": "16.8.4"
@@ -11,6 +13,6 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "p2": "^0.0.1"
+    "@bhy/p2": "^0.0.1"
   }
 }

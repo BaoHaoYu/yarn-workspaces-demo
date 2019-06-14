@@ -4,7 +4,13 @@
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "npmClientArgs": [
-  ],
+  "npmClientArgs": [],
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "src/*"
+      ]
+    }
+  },
   "version": "0.0.1"
 }
