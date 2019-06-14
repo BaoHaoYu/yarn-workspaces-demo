@@ -6,7 +6,7 @@ export default function (): any {
                     return (
               <div className={s.p1}>
             p1
-              <P2ddddddddddddddd />
+                <P2ddddddddddddddd />
         </div>
   )
 }
