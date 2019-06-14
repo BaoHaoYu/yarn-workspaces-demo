@@ -7,7 +7,10 @@
   "scripts": {
     "build": "rollup -c rollup.config.js -w",
     "tslint": "tslint --fix packages/**/*{.ts,.tsx}",
-    "stylelint": "stylelint --fix packages/**/*.scss"
+    "stylelint": "stylelint --fix packages/**/*.scss",
+    "publish": "lerna publish --skip-git",
+    "link": "lerna exec -- yarn link",
+    "updated": "lerna updated"
   },
   "husky": {
     "hooks": {
@@ -19,6 +22,7 @@
     "fs-extra": "^8.0.1",
     "globby": "^9.2.0",
     "husky": "^2.4.1",
+    "lerna": "^3.15.0",
     "node-sass": "^4.12.0",
     "postcss-url": "^8.0.0",
     "precss": "^4.0.0",

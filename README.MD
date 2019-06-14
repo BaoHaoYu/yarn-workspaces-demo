@@ -7,7 +7,7 @@ rollup + yarn workspaces 管理多个包
 - `yarn add *any_pack* -W`
 
 # TODO 
-- `lerna`
+- `lerna`  √
 - `tslint`  √
 - `stylelint`  √
 - `storybook`
