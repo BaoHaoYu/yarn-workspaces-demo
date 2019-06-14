@@ -20,15 +20,16 @@ const config = globby.sync('packages/*/package.json').map((pPath) => {
                     url({ url: 'inline' }),
                     precss
                 ],
+                extract: path.join(libRoot,'dist/style.css'),
                 modules: {
-                    generateScopedName: '[local]___[hash:base64:5]',
+                    generateScopedName: '[local]___[hash:base64:5]'
                 }
             }),
             nodeResolve({
                 extensions: ['.js', '.jsx', '.ts', '.tsx']
             }),
             typescript({
-                check: true,
+                check: false,
                 tsconfigOverride: {
                     compilerOptions: {
                         baseUrl: libRoot,
