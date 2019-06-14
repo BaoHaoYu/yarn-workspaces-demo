@@ -34,7 +34,7 @@ const config = globby.sync('packages/*/package.json').map((pPath) => {
                 include: path.join(__dirname, 'node_modules/**'),
             }),
         ],
-        external: pkg.dependencies,
+        external: Object.keys(pkg.dependencies),
         output: [
             {
                 file: path.join(libRoot, pkg.main),
