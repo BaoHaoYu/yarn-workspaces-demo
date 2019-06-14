@@ -2,8 +2,8 @@
   "extends": "./config/tsconfig.common.json",
   "compilerOptions": {
     "module": "esnext",
-    "target": "es5",
     "baseUrl": ".",
+    "declaration": true,
     "lib": [
       "dom",
       "dom.iterable",
@@ -14,12 +14,10 @@
     ]
   },
   "include": [
-    "packages",
-    "stories"
+    "packages"
   ],
   "exclude": [
     "node_modules",
-    "build",
     "dist"
   ]
 }

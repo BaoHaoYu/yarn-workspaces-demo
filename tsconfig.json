@@ -6,17 +6,10 @@
     "baseUrl": "."
   },
   "include": [
-    "webpack-ts",
-    "config",
-    "server",
-    "packages",
-    ".storybook",
-    "stories",
-    "util"
+    "packages"
   ],
   "exclude": [
     "node_modules",
-    "build",
     "dist"
   ]
 }

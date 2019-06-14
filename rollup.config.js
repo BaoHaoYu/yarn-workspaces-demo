@@ -8,15 +8,25 @@ import fse from 'fs-extra'
 
 const config = globby.sync('packages/*/package.json').map((pPath) => {
     const pkg = fse.readJsonSync(pPath)
+    const libRoot = path.join(pPath, '..')
     const config = {
-        input: path.join(pPath, '../src/index.tsx'),
+        input: path.join(libRoot, 'src/index.tsx'),
         plugins: [
             nodeResolve({
                 extensions: ['.js', '.jsx', '.ts', '.tsx']
             }),
             typescript({
                 check: true,
-                tsconfigDefaults: {},
+                tsconfigOverride: {
+                    compilerOptions: {
+                        baseUrl: libRoot,
+                        outDir: path.join(libRoot, 'dist'),
+                        allowSyntheticDefaultImports: true
+                    },
+                    include: [
+                        path.join(libRoot, 'src')
+                    ]
+                },
                 typescript: ts,
                 tsconfig: path.join(__dirname, 'tsconfig-main.json')
             }),
@@ -27,20 +37,25 @@ const config = globby.sync('packages/*/package.json').map((pPath) => {
         external: pkg.dependencies,
         output: [
             {
-                file: path.join(pPath, '../', pkg.main),
+                file: path.join(libRoot, pkg.main),
                 format: 'cjs',
-                exports: 'named'
+                exports: 'named',
+                globals: {
+                    'react': 'React'
+                }
             },
             {
-                file: path.join(pPath, '../', pkg.module),
+                file: path.join(libRoot, pkg.module),
                 format: 'esm',
-                exports: 'named'
+                exports: 'named',
+                globals: {
+                    'react': 'React'
+                }
             },
         ]
 
     }
     return config
 })
-console.log(config);
 
-module.exports = config
+export default config
