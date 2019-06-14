@@ -1,4 +1,15 @@
-rollup + yarn workspaces
+# 作用
+rollup + yarn workspaces 管理多个包
 
-TODO lerna + storybook
-run `yarn`
+# 命令
+- `yarn config set workspaces-experimental true`
+- `yarn`
+- `yarn add *any_pack* -W`
+
+# TODO 
+- `lerna`
+- `tslint` 
+- `stylelint`
+- `storybook`
+- `jest` 
+- `push to npm`
