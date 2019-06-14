@@ -4,9 +4,9 @@ import * as React from 'react'
 import s from './style.scss'
 export default function (): any {
   return (
-              <div className={s.p1}>
+        <div className={s.p1}>
             p1
-                <P2ddddddddddddddd />
+            <P2 />
         </div>
   )
 }
