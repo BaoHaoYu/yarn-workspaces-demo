@@ -10,6 +10,6 @@ rollup + yarn workspaces 管理多个包
 - `lerna`  √
 - `tslint`  √
 - `stylelint`  √
-- `storybook`
+- `storybook`  √
 - `jest` 
 - `push to npm`

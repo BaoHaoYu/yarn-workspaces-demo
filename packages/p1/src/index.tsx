@@ -2,11 +2,13 @@ import P2 from 'p2'
 import * as React from 'react'
 // @ts-ignore
 import s from './style.scss'
-export default function (): any {
+const p1: React.StatelessComponent<{ value: string }> = (props) => {
   return (
-        <div className={s.p1}>
-            p1
-            <P2 />
-        </div>
+    <div className={s.p1}>
+      p1 value = {props.value}
+      <P2 />
+    </div>
   )
 }
+
+export default p1

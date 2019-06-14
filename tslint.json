@@ -9,7 +9,10 @@
     "no-console": false
   },
   "include": [
-    "packages"
+    "packages",
+    "webpack-ts",
+    ".storybook",
+    "stories"
   ],
   "exclude": [
     "node_modlues",

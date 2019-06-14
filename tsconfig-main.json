@@ -14,7 +14,10 @@
     ]
   },
   "include": [
-    "packages"
+    "packages",
+    "stories",
+    "webpack-ts",
+    ".storybook"
   ],
   "exclude": [
     "node_modules",
