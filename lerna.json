@@ -1,16 +1,18 @@
 {
+  "version": "0.0.1",
   "packages": [
     "packages/*/*"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "npmClientArgs": [],
+  "npmClientArgs": [
+    "--no-lockfile"
+  ],
   "command": {
     "publish": {
       "ignoreChanges": [
         "src/*"
       ]
     }
-  },
-  "version": "0.0.1"
+  }
 }
