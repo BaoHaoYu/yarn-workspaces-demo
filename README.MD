@@ -14,6 +14,7 @@ rollup + yarn workspaces 管理多个包
 - `stylelint`  √
 - `storybook`  √
 - `push to npm` √
+- `jest` √
 
 # TODO 
-- `jest` 
+null
