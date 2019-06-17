@@ -1,6 +1,7 @@
 {
   "name": "yarn-workspaces-demo",
   "private": true,
+  "license": "MIT",
   "workspaces": [
     "packages/*"
   ],
@@ -8,7 +9,7 @@
     "build": "rollup -c rollup.config.js -w",
     "tslint": "tslint --fix packages/**/*{.ts,.tsx} .storybook/*.ts stories/**/*{.ts,.tsx}",
     "stylelint": "stylelint --fix packages/**/*.scss",
-    "publish": "lerna publish --skip-git",
+    "release": "lerna publish --no-git-tag-version --no-push",
     "link": "lerna exec -- yarn link",
     "updated": "lerna updated",
     "storybook": "start-storybook -p 6006",

@@ -5,3 +5,4 @@ yarn-error.log
 .rpt2_cache
 .idea/
 storybook-static
+.npmrc

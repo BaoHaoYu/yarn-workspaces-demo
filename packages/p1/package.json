@@ -1,18 +1,23 @@
 {
   "name": "@bhy/p1",
   "version": "0.0.1",
+  "description": "larna demo",
+  "license": "MIT",
+  "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p1",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.ems.js",
   "types": "dist/index.d.ts",
-  "license": "MIT",
-  "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p1",
   "devDependencies": {
     "@types/react": "16.8.20",
     "@types/react-dom": "16.8.4"
   },
   "dependencies": {
+    "@bhy/p2": "^0.0.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "@bhy/p2": "^0.0.1"
-  }
+    "react-dom": "^16.8.6"
+  },
+  "gitHead": "025189f6997ae5f8e9eca4de24ad0424043fdc29"
 }
