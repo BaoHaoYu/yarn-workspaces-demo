@@ -3,11 +3,13 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "resolveJsonModule": true
   },
   "include": [
     "packages",
-    "stories"
+    "stories",
+    ".storybook/*"
   ],
   "exclude": [
     "node_modules",

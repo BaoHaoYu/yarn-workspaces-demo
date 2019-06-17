@@ -2,8 +2,8 @@ import * as React from 'react'
 
 export default function () {
   return (
-        <div>
+        <h2>
             p2
-        </div>
+        </h2>
   )
 }

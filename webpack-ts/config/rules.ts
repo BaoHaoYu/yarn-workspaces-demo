@@ -48,15 +48,6 @@ export default function (sourceMap: boolean): webpack.RuleSetRule[] {
           }
         }
       ]
-    },
-    {
-      test: /\.json$/,
-      type: 'javascript/auto',
-      use: [
-        {
-          loader: 'file-loader'
-        }
-      ]
     }
   ]
 }

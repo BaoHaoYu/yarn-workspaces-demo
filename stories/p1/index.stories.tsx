@@ -7,9 +7,14 @@ storiesOf('p1', module)
   .addDecorator(withKnobs)
   .add('demo', () => {
     const v = text('value', 'ddd')
+
     return (
       <div>
-        <P1 value={v}/>
+        <P1 value={v} />
       </div>
     )
-  })
+  },
+  {
+    jest: ['p1']
+  }
+  )

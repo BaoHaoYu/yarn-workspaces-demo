@@ -15,7 +15,7 @@
     "@types/react-dom": "16.8.4"
   },
   "dependencies": {
-    "@bhy/p2": "^0.0.1",
+    "@lerna-demo/p2": "^0.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
