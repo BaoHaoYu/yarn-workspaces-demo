@@ -9,30 +9,30 @@ rollup + yarn workspaces 管理多个包
 ### yarn开启工作空间
 `yarn config set workspaces-experimental true`
 
-## 安装依赖
+### 安装依赖
 `yarn`
 
-## 添加新的包到依赖，注意加入`-W`
+### 添加新的包到依赖，注意加入`-W`
 `yarn add *any_pack* -W`
 
-## 编译所有包
+### 编译所有包
 `npm run build`
 
-## 编译所有包同时监视
+### 编译所有包同时监视
 `npm run build:w`
 
-## 启动storybook
+### 启动storybook
 `npm run storybook`
 打开 http://localhost:6006
 
-## 启动jest监视，结果输出到.jest-test-results.json
+### 启动jest监视，结果输出到.jest-test-results.json
 如果storybook需要显示jest结果，则要执行该命令  
 `npm run test:generate-output`
 
-## 格式化ts
+### 格式化ts
 `npm run tslint`
 
-## 发布到npm
+### 发布到npm
 `npm run release`
 
 # 特性
