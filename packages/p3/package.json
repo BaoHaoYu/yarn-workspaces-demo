@@ -1,9 +1,9 @@
 {
-  "name": "@lerna-demo/p1",
-  "version": "0.0.11",
+  "name": "@lerna-demo/p3",
+  "version": "0.0.1",
   "description": "larna demo",
   "license": "MIT",
-  "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p1",
+  "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p3",
   "publishConfig": {
     "access": "public"
   },
@@ -15,9 +15,7 @@
     "@types/react-dom": "16.8.4"
   },
   "dependencies": {
-    "@lerna-demo/p2": "^0.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
-  },
-  "gitHead": "43509d1f45569b4df0d531f080089db15b814ecb"
+  }
 }

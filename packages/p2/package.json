@@ -1,6 +1,6 @@
 {
   "name": "@lerna-demo/p2",
-  "version": "0.0.4",
+  "version": "0.0.10",
   "description": "larna demo",
   "license": "MIT",
   "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p2",
@@ -18,5 +18,5 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "gitHead": "4e4277df67c289fc0ee9c2b6f3c65e09fcc786da"
+  "gitHead": "43509d1f45569b4df0d531f080089db15b814ecb"
 }
