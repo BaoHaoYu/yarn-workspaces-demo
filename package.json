@@ -13,6 +13,8 @@
     "release": "lerna publish --no-git-tag-version --no-push",
     "link": "lerna exec -- yarn link",
     "updated": "lerna updated",
+    "changed": "lerna changed",
+    "diff": "lerna diff",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
