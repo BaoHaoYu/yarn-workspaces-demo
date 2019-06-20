@@ -12,6 +12,7 @@
     - [格式化ts](#%E6%A0%BC%E5%BC%8F%E5%8C%96ts)
     - [发布到npm](#%E5%8F%91%E5%B8%83%E5%88%B0npm)
 - [特性](#%E7%89%B9%E6%80%A7)
+- [TODO](#TODO)
 <!-- tocstop -->
 
 ## 作用
@@ -58,3 +59,7 @@ rollup + yarn workspaces 管理多个包
 - `storybook`  √
 - `push to npm` √
 - `jest` √
+
+## TODO
+- 修复lerna推送的时候会推送所有的包，而不是推送已经改变的
+- 修复lerna推送的时候不会更新包的版本
