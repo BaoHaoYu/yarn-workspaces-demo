@@ -12,6 +12,8 @@
     - [格式化ts](#%E6%A0%BC%E5%BC%8F%E5%8C%96ts)
     - [发布到npm](#%E5%8F%91%E5%B8%83%E5%88%B0npm)
 - [特性](#%E7%89%B9%E6%80%A7)
+- [lerna diff](#lerna-diff)
+    - [lerna diff 总是返回错误的结果](#lerna-diff-%E6%80%BB%E6%98%AF%E8%BF%94%E5%9B%9E%E9%94%99%E8%AF%AF%E7%9A%84%E7%BB%93%E6%9E%9C)
 - [TODO](#TODO)
 <!-- tocstop -->
 
@@ -59,6 +61,164 @@ rollup + yarn workspaces 管理多个包
 - `storybook`  √
 - `push to npm` √
 - `jest` √
+
+## lerna diff
+#### lerna diff 总是返回错误的结果
+进入`node_modules\@lerna\diff\lib\get-last-commit.js`
+
+- 修改前
+```js
+function getLastCommit(execOpts) {
+  if (hasTags(execOpts)) {
+    log.silly("getLastTagInBranch");
+
+    return childProcess.execSync("git", ["describe", "--tags", "--abbrev=0"], execOpts);
+  }
+
+  log.silly("getFirstCommit");
+  return childProcess.execSync("git", ["rev-list", "--max-parents=0", "HEAD"], execOpts);
+}
+```
+
+`lerna diff @lerna-demo/p1`
+```diff
+new file mode 100644
+index 0000000..5cf9201
+--- /dev/null
++++ b/packages/p1/.npmignore
+@@ -0,0 +1,3 @@
++src
++__test__
++*.log
+\ No newline at end of file
+diff --git a/packages/p1/README.md b/packages/p1/README.md
+new file mode 100644
+index 0000000..29f9b1b
+:...skipping...
+diff --git a/packages/p1/.npmignore b/packages/p1/.npmignore
+new file mode 100644
+index 0000000..5cf9201
+--- /dev/null
++++ b/packages/p1/.npmignore
+@@ -0,0 +1,3 @@
++src
++__test__
++*.log
+\ No newline at end of file
+diff --git a/packages/p1/README.md b/packages/p1/README.md
+new file mode 100644
+index 0000000..29f9b1b
+--- /dev/null
++++ b/packages/p1/README.md
+@@ -0,0 +1 @@
++lerna demo p1
+\ No newline at end of file
+diff --git a/packages/p1/package.json b/packages/p1/package.json
+index 1a8531a..354cdf5 100644
+--- a/packages/p1/package.json
++++ b/packages/p1/package.json
+@@ -1,6 +1,12 @@
+ {
+-  "name": "p1",
+-  "version": "0.0.1",
++  "name": "@lerna-demo/p1",
++  "version": "0.0.15",
++  "description": "larna demo",
++  "license": "MIT",
++  "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p1",
++  "publishConfig": {
++    "access": "public"
++  },
+   "main": "dist/bundle.cjs.js",
+   "module": "dist/bundle.ems.js",
+   "types": "dist/index.d.ts",
+@@ -9,7 +15,8 @@
+     "@types/react-dom": "16.8.4"
+   },
+   "dependencies": {
++    "@lerna-demo/p2": "^0.0.1",
+     "react": "^16.8.6",
+     "react-dom": "^16.8.6"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/packages/p1/src/index.tsx b/packages/p1/src/index.tsx
+index 443c130..14e6788 100644
+--- a/packages/p1/src/index.tsx
++++ b/packages/p1/src/index.tsx
+@@ -1,9 +1,21 @@
++import P2 from '@lerna-demo/p2'
+ import * as React from 'react'
++// @ts-ignore
++import s from './style.scss'
+
+-export default function (): any {
+-    return (
+-        <div>
+-            p1
+-        </div>
+-    )
+-}
+\ No newline at end of file
++export interface IProps {
++  value?: string
++}
++
++const p1: React.FunctionComponent<IProps> = (props) => {
++  return (
++    <div className={s.p1}>
++      <h1>
++        {props.value}
++      </h1>
++      <P2 />
++    </div>
++  )
++}
++
++export default p1
+diff --git a/packages/p1/src/style.scss b/packages/p1/src/style.scss
+new file mode 100644
+index 0000000..c6a3cef
+--- /dev/null
++++ b/packages/p1/src/style.scss
+@@ -0,0 +1,3 @@
++.p1 {
++  color: rgb(33, 91, 214);
++}
+```
+
+修改后
+```js
+function getLastCommit(execOpts) {
+  if (hasTags(execOpts)) {
+    log.silly("getLastTagInBranch");
+
+    return childProcess.execSync("git", ["describe", "--tags", "--abbrev=0"], execOpts);
+  }
+
+  log.silly("getLastCommit");
+  return childProcess.execSync("git", ["log", '--format="%H"', "-n", "1"], execOpts);
+}
+```
+
+`lerna diff @lerna-demo/p1`
+```diff
+index 89dc9cc..14e6788 100644
+--- a/packages/p1/src/index.tsx
++++ b/packages/p1/src/index.tsx
+@@ -4,7 +4,7 @@ import * as React from 'react'
+ import s from './style.scss'
+
+ export interface IProps {
+-  value: string
++  value?: string
+ }
+```
+
+> 总结：
+> 要打上标签，lerna diff对比的是上个打上标签的提交，和最后提交这俩个提交进行对比的
+> 所以，建议每次发布都打上标签如 release0.0.1，release0.0.2之类的
 
 ## TODO
 - 修复lerna推送的时候会推送所有的包，而不是推送已经改变的
