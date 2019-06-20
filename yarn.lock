@@ -1100,8 +1100,8 @@
 
 "@evocateur/libnpmaccess@^3.1.0":
   version "3.1.0"
-  resolved "https://registry.npm.taobao.org/@evocateur/libnpmaccess/download/@evocateur/libnpmaccess-3.1.0.tgz#e546ee4e4bedca54ed9303948ec54c985cec33e4"
-  integrity sha1-5UbuTkvtylTtkwOUjsVMmFzsM+Q=
+  resolved "https://registry.npmjs.org/@evocateur/libnpmaccess/-/libnpmaccess-3.1.0.tgz#e546ee4e4bedca54ed9303948ec54c985cec33e4"
+  integrity sha512-bfrqZ0v+Il5TJBsgF2oyepeJg34K2pBItapzP+UT1QMIGpUh/Zc1pQql4jrafamZTqP3ZvdJxaElat8B5K3ICA==
   dependencies:
     "@evocateur/npm-registry-fetch" "^3.9.1"
     aproba "^2.0.0"
@@ -1111,8 +1111,8 @@
 
 "@evocateur/libnpmpublish@^1.2.0":
   version "1.2.0"
-  resolved "https://registry.npm.taobao.org/@evocateur/libnpmpublish/download/@evocateur/libnpmpublish-1.2.0.tgz#3e0d79fdc0a75f212adabb7c7e341b017effeac2"
-  integrity sha1-Pg15/cCnXyEq2rt8fjQbAX7/6sI=
+  resolved "https://registry.npmjs.org/@evocateur/libnpmpublish/-/libnpmpublish-1.2.0.tgz#3e0d79fdc0a75f212adabb7c7e341b017effeac2"
+  integrity sha512-sezhX9FSnPIyrBBvxVocVJVO1uIWPczf6rOmUZSntCWfQMraO8pWTFlDJbroFqPbEqFFHf3eyw8NQ0Eb7OLd1g==
   dependencies:
     "@evocateur/npm-registry-fetch" "^3.9.1"
     aproba "^2.0.0"
@@ -1126,8 +1126,8 @@
 
 "@evocateur/npm-registry-fetch@^3.9.1":
   version "3.9.1"
-  resolved "https://registry.npm.taobao.org/@evocateur/npm-registry-fetch/download/@evocateur/npm-registry-fetch-3.9.1.tgz#75b3917320e559f6c91e26af17e62b085ec457a2"
-  integrity sha1-dbORcyDlWfbJHiavF+YrCF7EV6I=
+  resolved "https://registry.npmjs.org/@evocateur/npm-registry-fetch/-/npm-registry-fetch-3.9.1.tgz#75b3917320e559f6c91e26af17e62b085ec457a2"
+  integrity sha512-6v1bHbcAypQ+te/1RGSNL4JkK6mcMtcZrUusqo5iKRtYSAig9UJXlOaCcBR+eLywt2DQMNpEwAj24jwWDX5G/w==
   dependencies:
     JSONStream "^1.3.4"
     bluebird "^3.5.1"
@@ -1139,8 +1139,8 @@
 
 "@evocateur/pacote@^9.6.0":
   version "9.6.0"
-  resolved "https://registry.npm.taobao.org/@evocateur/pacote/download/@evocateur/pacote-9.6.0.tgz#3f0d08fb81c572289a2dfa981e7f97b6dd83cef2"
-  integrity sha1-Pw0I+4HFciiaLfqYHn+Xtt2DzvI=
+  resolved "https://registry.npmjs.org/@evocateur/pacote/-/pacote-9.6.0.tgz#3f0d08fb81c572289a2dfa981e7f97b6dd83cef2"
+  integrity sha512-nKx8EPxXhzqNfePbqC6603z7Kkf6GBS2q+SNGtBS/bCgS5Q+p3OVR6MXKOkpvC3WHse98W2WLu8QaV9axtfxyw==
   dependencies:
     "@evocateur/npm-registry-fetch" "^3.9.1"
     bluebird "^3.5.3"
@@ -1321,10 +1321,18 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
+"@lerna-demo/p2@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/@lerna-demo/p2/-/p2-0.0.1.tgz#22b926889c22cbf42bf1d9e61edeaa1eb8d43d87"
+  integrity sha512-7cPTRE3Odd9EZragVaR6id5gnJXDFya1dDQqiLSQdWTBkLjkbrbZg9CI6KQIt9fq8zI2gasn/VbXK0rq7ulpYQ==
+  dependencies:
+    react "^16.8.6"
+    react-dom "^16.8.6"
+
 "@lerna/add@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/add/download/@lerna/add-3.15.0.tgz#10be562f43cde59b60f299083d54ac39520ec60a"
-  integrity sha1-EL5WL0PN5Ztg8pkIPVSsOVIOxgo=
+  resolved "https://registry.npmjs.org/@lerna/add/-/add-3.15.0.tgz#10be562f43cde59b60f299083d54ac39520ec60a"
+  integrity sha512-+KrG4GFy/6FISZ+DwWf5Fj5YB4ESa4VTnSn/ujf3VEda6dxngHPN629j+TcPbsdOxUYVah+HuZbC/B8NnkrKpQ==
   dependencies:
     "@evocateur/pacote" "^9.6.0"
     "@lerna/bootstrap" "3.15.0"
@@ -1347,8 +1355,8 @@
 
 "@lerna/bootstrap@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/bootstrap/download/@lerna/bootstrap-3.15.0.tgz#f53e0bbbbfb8367e609a06378409bfc673ff2930"
-  integrity sha1-9T4Lu7+4Nn5gmgY3hAm/xnP/KTA=
+  resolved "https://registry.npmjs.org/@lerna/bootstrap/-/bootstrap-3.15.0.tgz#f53e0bbbbfb8367e609a06378409bfc673ff2930"
+  integrity sha512-4AxsPKKbgj2Ju03qDddQTpOHvpqnwd0yaiEU/aCcWv/4tDTe79NqUne2Z3+P2WZY0Zzb8+nUKcskwYBMTeq+Mw==
   dependencies:
     "@lerna/batch-packages" "3.14.0"
     "@lerna/command" "3.15.0"
@@ -1377,8 +1385,8 @@
 
 "@lerna/changed@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/changed/download/@lerna/changed-3.15.0.tgz#20db9d992d697e4288c260aa38b989dcb93f4b40"
-  integrity sha1-INudmS1pfkKIwmCqOLmJ3Lk/S0A=
+  resolved "https://registry.npmjs.org/@lerna/changed/-/changed-3.15.0.tgz#20db9d992d697e4288c260aa38b989dcb93f4b40"
+  integrity sha512-Hns1ssI9T9xOTGVc7PT2jUaqzsSkxV3hV/Y7iFO0uKTk+fduyTwGTHU9A/ybQ/xi/9iaJbvaXyjxKiGoEnzmhg==
   dependencies:
     "@lerna/collect-updates" "3.14.2"
     "@lerna/command" "3.15.0"
@@ -1388,8 +1396,8 @@
 
 "@lerna/check-working-tree@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/check-working-tree/download/@lerna/check-working-tree-3.14.2.tgz#5ce007722180a69643a8456766ed8a91fc7e9ae1"
-  integrity sha1-XOAHciGAppZDqEVnZu2Kkfx+muE=
+  resolved "https://registry.npmjs.org/@lerna/check-working-tree/-/check-working-tree-3.14.2.tgz#5ce007722180a69643a8456766ed8a91fc7e9ae1"
+  integrity sha512-7safqxM/MYoAoxZxulUDtIJIbnBIgo0PB/FHytueG+9VaX7GMnDte2Bt1EKa0dz2sAyQdmQ3Q8ZXpf/6JDjaeg==
   dependencies:
     "@lerna/collect-uncommitted" "3.14.2"
     "@lerna/describe-ref" "3.14.2"
@@ -1397,8 +1405,8 @@
 
 "@lerna/child-process@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/child-process/download/@lerna/child-process-3.14.2.tgz#950240cba83f7dfe25247cfa6c9cebf30b7d94f6"
-  integrity sha1-lQJAy6g/ff4lJHz6bJzr8wt9lPY=
+  resolved "https://registry.npmjs.org/@lerna/child-process/-/child-process-3.14.2.tgz#950240cba83f7dfe25247cfa6c9cebf30b7d94f6"
+  integrity sha512-xnq+W5yQb6RkwI0p16ZQnrn6HkloH/MWTw4lGE1nKsBLAUbmSU5oTE93W1nrG0X3IMF/xWc9UYvNdUGMWvZZ4w==
   dependencies:
     chalk "^2.3.1"
     execa "^1.0.0"
@@ -1406,8 +1414,8 @@
 
 "@lerna/clean@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/clean/download/@lerna/clean-3.15.0.tgz#a94da50908a80ba443a0a682706aca79ac2ecf27"
-  integrity sha1-qU2lCQioC6RDoKaCcGrKeawuzyc=
+  resolved "https://registry.npmjs.org/@lerna/clean/-/clean-3.15.0.tgz#a94da50908a80ba443a0a682706aca79ac2ecf27"
+  integrity sha512-D1BN7BnJk6YjrSR7E7RiCmWiFVWDo3L+OSe6zDq6rNNYexPBtSi2JOCeF/Dibi3jd2luVu0zkVpUtuEEdPiD+A==
   dependencies:
     "@lerna/command" "3.15.0"
     "@lerna/filter-options" "3.14.2"
@@ -1430,8 +1438,8 @@
 
 "@lerna/collect-uncommitted@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/collect-uncommitted/download/@lerna/collect-uncommitted-3.14.2.tgz#b5ed00d800bea26bb0d18404432b051eee8d030e"
-  integrity sha1-te0A2AC+omuw0YQEQysFHu6NAw4=
+  resolved "https://registry.npmjs.org/@lerna/collect-uncommitted/-/collect-uncommitted-3.14.2.tgz#b5ed00d800bea26bb0d18404432b051eee8d030e"
+  integrity sha512-4EkQu4jIOdNL2BMzy/N0ydHB8+Z6syu6xiiKXOoFl0WoWU9H1jEJCX4TH7CmVxXL1+jcs8FIS2pfQz4oew99Eg==
   dependencies:
     "@lerna/child-process" "3.14.2"
     chalk "^2.3.1"
@@ -1440,8 +1448,8 @@
 
 "@lerna/collect-updates@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/collect-updates/download/@lerna/collect-updates-3.14.2.tgz#396201f6568ec5916bf2c11e7a29b0931fcd3e5b"
-  integrity sha1-OWIB9laOxZFr8sEeeimwkx/NPls=
+  resolved "https://registry.npmjs.org/@lerna/collect-updates/-/collect-updates-3.14.2.tgz#396201f6568ec5916bf2c11e7a29b0931fcd3e5b"
+  integrity sha512-+zSQ2ZovH8Uc0do5dR+sk8VvRJc6Xl+ZnJJGESIl17KSpEw/lVjcOyt6f3BP+WHn+iSOjMWcGvUVA601FIEdZw==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@lerna/describe-ref" "3.14.2"
@@ -1451,8 +1459,8 @@
 
 "@lerna/command@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/command/download/@lerna/command-3.15.0.tgz#e1dc1319054f1cf0b135aa0c5730f3335641a0ca"
-  integrity sha1-4dwTGQVPHPCxNaoMVzDzM1ZBoMo=
+  resolved "https://registry.npmjs.org/@lerna/command/-/command-3.15.0.tgz#e1dc1319054f1cf0b135aa0c5730f3335641a0ca"
+  integrity sha512-dZqr4rKFN+veuXakIQ1DcGUpzBgcWKaYFNN4O6/skOdVQaEfGefzo1sZET+q7k/BkypxkhXHXpv5UqqSuL/EHQ==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@lerna/package-graph" "3.14.0"
@@ -1492,8 +1500,8 @@
 
 "@lerna/create@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/create/download/@lerna/create-3.15.0.tgz#27bfadcbdf71d34226aa82432293f5290f7ab1aa"
-  integrity sha1-J7+ty99x00ImqoJDIpP1KQ96sao=
+  resolved "https://registry.npmjs.org/@lerna/create/-/create-3.15.0.tgz#27bfadcbdf71d34226aa82432293f5290f7ab1aa"
+  integrity sha512-doXGt0HTwTQl8GkC2tOrraA/5OWbz35hJqi7Dsl3Fl0bAxiv9XmF3LykHFJ+YTDHfGpdoJ8tKu66f/VKP16G0w==
   dependencies:
     "@evocateur/pacote" "^9.6.0"
     "@lerna/child-process" "3.14.2"
@@ -1516,16 +1524,16 @@
 
 "@lerna/describe-ref@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/describe-ref/download/@lerna/describe-ref-3.14.2.tgz#edc3c973f5ca9728d23358c4f4d3b55a21f65be5"
-  integrity sha1-7cPJc/XKlyjSM1jE9NO1WiH2W+U=
+  resolved "https://registry.npmjs.org/@lerna/describe-ref/-/describe-ref-3.14.2.tgz#edc3c973f5ca9728d23358c4f4d3b55a21f65be5"
+  integrity sha512-qa5pzDRK2oBQXNjyRmRnN7E8a78NMYfQjjlRFB0KNHMsT6mCiL9+8kIS39sSE2NqT8p7xVNo2r2KAS8R/m3CoQ==
   dependencies:
     "@lerna/child-process" "3.14.2"
     npmlog "^4.1.2"
 
 "@lerna/diff@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/diff/download/@lerna/diff-3.15.0.tgz#573d6f58f6809d16752dcfab74c5e286b6678371"
-  integrity sha1-Vz1vWPaAnRZ1Lc+rdMXihrZng3E=
+  resolved "https://registry.npmjs.org/@lerna/diff/-/diff-3.15.0.tgz#573d6f58f6809d16752dcfab74c5e286b6678371"
+  integrity sha512-N1Pr0M554Bt+DlVoD+DXWGh92gcq6G9icn8sH5GSqfwi0XCpPNJ2i1BNEZpUQ6ulLWOMa1YHR4PypPxecRGBjA==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@lerna/command" "3.15.0"
@@ -1534,8 +1542,8 @@
 
 "@lerna/exec@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/exec/download/@lerna/exec-3.15.0.tgz#b31510f47255367eb0d3e4a4f7b6ef8f7e41b985"
-  integrity sha1-sxUQ9HJVNn6w0+Sk97bvj35BuYU=
+  resolved "https://registry.npmjs.org/@lerna/exec/-/exec-3.15.0.tgz#b31510f47255367eb0d3e4a4f7b6ef8f7e41b985"
+  integrity sha512-YuXPd64TNG9wbb3lRvyMARQbdlbMZ1bJZ+GCm0enivnIWUyg0qtBDcfPY2dWpIgOif04zx+K/gmOX4lCaGM4UQ==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@lerna/command" "3.15.0"
@@ -1546,8 +1554,8 @@
 
 "@lerna/filter-options@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/filter-options/download/@lerna/filter-options-3.14.2.tgz#7ba91cb54ff3fd9f4650ad8d7c40bc1075e44c2d"
-  integrity sha1-e6kctU/z/Z9GUK2NfEC8EHXkTC0=
+  resolved "https://registry.npmjs.org/@lerna/filter-options/-/filter-options-3.14.2.tgz#7ba91cb54ff3fd9f4650ad8d7c40bc1075e44c2d"
+  integrity sha512-Ct8oYvRttbYB9JalngHhirb8o9ZVyLm5a9MpXNevXoHiu6j0vNhI19BQCwNnrL6wZvEHJnzPuUl/jO23tWxemg==
   dependencies:
     "@lerna/collect-updates" "3.14.2"
     "@lerna/filter-packages" "3.13.0"
@@ -1580,8 +1588,8 @@
 
 "@lerna/github-client@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/github-client/download/@lerna/github-client-3.14.2.tgz#a743792b51cd9bdfb785186e429568827a6372eb"
-  integrity sha1-p0N5K1HNm9+3hRhuQpVognpjcus=
+  resolved "https://registry.npmjs.org/@lerna/github-client/-/github-client-3.14.2.tgz#a743792b51cd9bdfb785186e429568827a6372eb"
+  integrity sha512-+2Xh7t4qVmXiXE2utPnh5T7YwSltG74JP7c+EiooRY5+3zjh9MpPOcTKxVY3xKclzpsyXMohk2KpTF4tzA5rrg==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@octokit/plugin-enterprise-rest" "^2.1.1"
@@ -1591,8 +1599,8 @@
 
 "@lerna/gitlab-client@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/gitlab-client/download/@lerna/gitlab-client-3.15.0.tgz#91f4ec8c697b5ac57f7f25bd50fe659d24aa96a6"
-  integrity sha1-kfTsjGl7WsV/fyW9UP5lnSSqlqY=
+  resolved "https://registry.npmjs.org/@lerna/gitlab-client/-/gitlab-client-3.15.0.tgz#91f4ec8c697b5ac57f7f25bd50fe659d24aa96a6"
+  integrity sha512-OsBvRSejHXUBMgwWQqNoioB8sgzL/Pf1pOUhHKtkiMl6aAWjklaaq5HPMvTIsZPfS6DJ9L5OK2GGZuooP/5c8Q==
   dependencies:
     node-fetch "^2.5.0"
     npmlog "^4.1.2"
@@ -1605,16 +1613,16 @@
 
 "@lerna/has-npm-version@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/has-npm-version/download/@lerna/has-npm-version-3.14.2.tgz#ac17f7c68e92114b8332b95ae6cffec9c0d67a7b"
-  integrity sha1-rBf3xo6SEUuDMrla5s/+ycDWens=
+  resolved "https://registry.npmjs.org/@lerna/has-npm-version/-/has-npm-version-3.14.2.tgz#ac17f7c68e92114b8332b95ae6cffec9c0d67a7b"
+  integrity sha512-cG+z5bB8JPd5f+nT2eLN2LmKg06O11AxlnUxgw2W7cLyc7cnsmMSp/rxt2JBMwW2r4Yn+CLLJIRwJZ2Es8jFSw==
   dependencies:
     "@lerna/child-process" "3.14.2"
     semver "^5.5.0"
 
 "@lerna/import@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/import/download/@lerna/import-3.15.0.tgz#47f2da52059a96bb08a4c09e18d985258fce9ce1"
-  integrity sha1-R/LaUgWalrsIpMCeGNmFJY/OnOE=
+  resolved "https://registry.npmjs.org/@lerna/import/-/import-3.15.0.tgz#47f2da52059a96bb08a4c09e18d985258fce9ce1"
+  integrity sha512-4GKQgeTXBTwMbZNkYyPdQIVA41HIISD7D6XRNrDaG0falUfvoPsknijQPCBmGqeh66u1Fcn2+4lkL3OCTj2FMg==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@lerna/command" "3.15.0"
@@ -1627,8 +1635,8 @@
 
 "@lerna/init@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/init/download/@lerna/init-3.15.0.tgz#bda36de44c365972f87cbd287fe85b6fb7bb1070"
-  integrity sha1-vaNt5Ew2WXL4fL0of+hbb7e7EHA=
+  resolved "https://registry.npmjs.org/@lerna/init/-/init-3.15.0.tgz#bda36de44c365972f87cbd287fe85b6fb7bb1070"
+  integrity sha512-VOqH6kFbFtfUbXxhSqXKY6bjnVp9nLuLRI6x9tVHOANX2LmSlXm17OUGBnNt+eM4uJLuiUsAR8nTlpCiz//lPQ==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@lerna/command" "3.15.0"
@@ -1638,8 +1646,8 @@
 
 "@lerna/link@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/link/download/@lerna/link-3.15.0.tgz#718b4116a8eacb3fc73414ae8d97f8fdaf8125da"
-  integrity sha1-cYtBFqjqyz/HNBSujZf4/a+BJdo=
+  resolved "https://registry.npmjs.org/@lerna/link/-/link-3.15.0.tgz#718b4116a8eacb3fc73414ae8d97f8fdaf8125da"
+  integrity sha512-yKHuifADINobvDOLljBGkVGpVwy6J3mg5p9lQXBdOLXBoIKC8o/UKBR9JvZMFvT/Iy6zn6FPy1v5lz9iU1Ib0Q==
   dependencies:
     "@lerna/command" "3.15.0"
     "@lerna/package-graph" "3.14.0"
@@ -1649,8 +1657,8 @@
 
 "@lerna/list@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/list/download/@lerna/list-3.15.0.tgz#4e401c1ad990bb12bd38298cb61d21136420ff68"
-  integrity sha1-TkAcGtmQuxK9OCmMth0hE2Qg/2g=
+  resolved "https://registry.npmjs.org/@lerna/list/-/list-3.15.0.tgz#4e401c1ad990bb12bd38298cb61d21136420ff68"
+  integrity sha512-8SvxnlfAnbEzQDf2NL0IxWyUuqWTykF9cHt5/f5TOzgESClpaOkDtqwh/UlE8nVTzWMnxnQUPQi3UTKyJD3i3g==
   dependencies:
     "@lerna/command" "3.15.0"
     "@lerna/filter-options" "3.14.2"
@@ -1686,8 +1694,8 @@
 
 "@lerna/npm-dist-tag@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/npm-dist-tag/download/@lerna/npm-dist-tag-3.15.0.tgz#262dd1e67a4cf82ae78fadfe02622ebce4add078"
-  integrity sha1-Ji3R5npM+Crnj63+AmIuvOSt0Hg=
+  resolved "https://registry.npmjs.org/@lerna/npm-dist-tag/-/npm-dist-tag-3.15.0.tgz#262dd1e67a4cf82ae78fadfe02622ebce4add078"
+  integrity sha512-lnbdwc4Ebs7/EI9fTIgbH3dxXnP+SuCcGhG7P5ZjOqo67SY09sRZGcygEzabpvIwXvKpBF8vCd4xxzjnF2u+PA==
   dependencies:
     "@evocateur/npm-registry-fetch" "^3.9.1"
     "@lerna/otplease" "3.14.0"
@@ -1697,8 +1705,8 @@
 
 "@lerna/npm-install@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/npm-install/download/@lerna/npm-install-3.14.2.tgz#fd22ff432f8b7cbe05bedfd36b0506482f1a4732"
-  integrity sha1-/SL/Qy+LfL4Fvt/TawUGSC8aRzI=
+  resolved "https://registry.npmjs.org/@lerna/npm-install/-/npm-install-3.14.2.tgz#fd22ff432f8b7cbe05bedfd36b0506482f1a4732"
+  integrity sha512-JYJJRtLETrGpcQZa8Rj16vbye399RqnaXmJlZuZ2twjJ2DYVYtwkfsGEOdvdaKw5KVOEpWcAxBA9OMmKQtCLQw==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@lerna/get-npm-exec-opts" "3.13.0"
@@ -1710,8 +1718,8 @@
 
 "@lerna/npm-publish@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/npm-publish/download/@lerna/npm-publish-3.15.0.tgz#89126d74ec97186475767b852954a5f55b732a71"
-  integrity sha1-iRJtdOyXGGR1dnuFKVSl9VtzKnE=
+  resolved "https://registry.npmjs.org/@lerna/npm-publish/-/npm-publish-3.15.0.tgz#89126d74ec97186475767b852954a5f55b732a71"
+  integrity sha512-G7rcNcSGjG0La8eHPXDvCvoNXbwNnP6XJ+GPh3CH5xiR/nikfLOa+Bfm4ytdjVWWxnKfCT4qyMTCoV1rROlqQQ==
   dependencies:
     "@evocateur/libnpmpublish" "^1.2.0"
     "@lerna/otplease" "3.14.0"
@@ -1725,8 +1733,8 @@
 
 "@lerna/npm-run-script@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/npm-run-script/download/@lerna/npm-run-script-3.14.2.tgz#8c518ea9d241a641273e77aad6f6fddc16779c3f"
-  integrity sha1-jFGOqdJBpkEnPneq1vb93BZ3nD8=
+  resolved "https://registry.npmjs.org/@lerna/npm-run-script/-/npm-run-script-3.14.2.tgz#8c518ea9d241a641273e77aad6f6fddc16779c3f"
+  integrity sha512-LbVFv+nvAoRTYLMrJlJ8RiakHXrLslL7Jp/m1R18vYrB8LYWA3ey+nz5Tel2OELzmjUiemAKZsD9h6i+Re5egg==
   dependencies:
     "@lerna/child-process" "3.14.2"
     "@lerna/get-npm-exec-opts" "3.13.0"
@@ -1749,8 +1757,8 @@
 
 "@lerna/pack-directory@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/pack-directory/download/@lerna/pack-directory-3.14.2.tgz#577b8ebf867c9b636a2e4659a27552ee24d83b9d"
-  integrity sha1-V3uOv4Z8m2NqLkZZonVS7iTYO50=
+  resolved "https://registry.npmjs.org/@lerna/pack-directory/-/pack-directory-3.14.2.tgz#577b8ebf867c9b636a2e4659a27552ee24d83b9d"
+  integrity sha512-b3LnJEmIml3sDj94TQT8R+kVyrDlmE7Su0WwcBYZDySXPMSZ38WA2/2Xjy/EWhXlFxp/nUJKyUG78nDrZ/00Uw==
   dependencies:
     "@lerna/get-packed" "3.13.0"
     "@lerna/package" "3.14.2"
@@ -1774,8 +1782,8 @@
 
 "@lerna/package@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/package/download/@lerna/package-3.14.2.tgz#f893cb42e26c869df272dafbe1dd5a3473b0bd4d"
-  integrity sha1-+JPLQuJshp3yctr74d1aNHOwvU0=
+  resolved "https://registry.npmjs.org/@lerna/package/-/package-3.14.2.tgz#f893cb42e26c869df272dafbe1dd5a3473b0bd4d"
+  integrity sha512-YR/+CzYdufJYfsUlrfuhTjA35iSZpXK7mVOZmeR9iRWhSaqesm4kq2zfxm9vCpZV2oAQQZOwi4eo5h0rQBtdiw==
   dependencies:
     load-json-file "^4.0.0"
     npm-package-arg "^6.1.0"
@@ -1790,8 +1798,8 @@
 
 "@lerna/project@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/project/download/@lerna/project-3.15.0.tgz#733b0993a849dcf5b68fcd0ec11d8f7de38a6999"
-  integrity sha1-czsJk6hJ3PW2j80OwR2PfeOKaZk=
+  resolved "https://registry.npmjs.org/@lerna/project/-/project-3.15.0.tgz#733b0993a849dcf5b68fcd0ec11d8f7de38a6999"
+  integrity sha512-eNGUWiMbQ9kh9kGkomtMnsLypS0rfLqxKgZP2+VnNVtIXjnLv4paeTm+1lkL+naNJUwhnpMk2NSLEeoxT/20QA==
   dependencies:
     "@lerna/package" "3.14.2"
     "@lerna/validation-error" "3.13.0"
@@ -1816,8 +1824,8 @@
 
 "@lerna/publish@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/publish/download/@lerna/publish-3.15.0.tgz#54f93f8f0820d2d419d0b65df1eb55d8277090c9"
-  integrity sha1-VPk/jwgg0tQZ0LZd8etV2CdwkMk=
+  resolved "https://registry.npmjs.org/@lerna/publish/-/publish-3.15.0.tgz#54f93f8f0820d2d419d0b65df1eb55d8277090c9"
+  integrity sha512-6tRRBJ8olLSXfrUsR4f7vSfx0cT1oPi6/v06yI3afDSsUX6eQ3ooZh7gMY4RWmd+nM/IJHTUzhlKF6WhTvo+9g==
   dependencies:
     "@evocateur/libnpmaccess" "^3.1.0"
     "@evocateur/npm-registry-fetch" "^3.9.1"
@@ -1875,8 +1883,8 @@
 
 "@lerna/rimraf-dir@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/rimraf-dir/download/@lerna/rimraf-dir-3.14.2.tgz#103a49882abd85d42285d05cc76869b89f21ffd2"
-  integrity sha1-EDpJiCq9hdQihdBcx2hpuJ8h/9I=
+  resolved "https://registry.npmjs.org/@lerna/rimraf-dir/-/rimraf-dir-3.14.2.tgz#103a49882abd85d42285d05cc76869b89f21ffd2"
+  integrity sha512-eFNkZsy44Bu9v1Hrj5Zk6omzg8O9h/7W6QYK1TTUHeyrjTEwytaNQlqF0lrTLmEvq55sviV42NC/8P3M2cvq8Q==
   dependencies:
     "@lerna/child-process" "3.14.2"
     npmlog "^4.1.2"
@@ -1912,8 +1920,8 @@
 
 "@lerna/run@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/run/download/@lerna/run-3.15.0.tgz#465028b5b561a050bd760924e4a0749de3f43172"
-  integrity sha1-RlAotbVhoFC9dgkk5KB0neP0MXI=
+  resolved "https://registry.npmjs.org/@lerna/run/-/run-3.15.0.tgz#465028b5b561a050bd760924e4a0749de3f43172"
+  integrity sha512-KQBkzZYoEKmzILKjbjsm1KKVWFBXwAdwzqJWj/lfxxd3V5LRF8STASk8aiw8bSpB0bUL9TU/pbXakRxiNzjDwQ==
   dependencies:
     "@lerna/command" "3.15.0"
     "@lerna/filter-options" "3.14.2"
@@ -1926,8 +1934,8 @@
 
 "@lerna/symlink-binary@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/symlink-binary/download/@lerna/symlink-binary-3.14.2.tgz#a832fdc6c4b1e5aaf9e6ac9c7e6c322746965eb0"
-  integrity sha1-qDL9xsSx5ar55qycfmwyJ0aWXrA=
+  resolved "https://registry.npmjs.org/@lerna/symlink-binary/-/symlink-binary-3.14.2.tgz#a832fdc6c4b1e5aaf9e6ac9c7e6c322746965eb0"
+  integrity sha512-tqMwuWi6z1da0AFFbleWyu3H9fqayiV50rjj4anFTfayel9jSjlA1xPG+56sGIP6zUUNuUSc9kLh7oRRmlauoA==
   dependencies:
     "@lerna/create-symlink" "3.14.0"
     "@lerna/package" "3.14.2"
@@ -1936,8 +1944,8 @@
 
 "@lerna/symlink-dependencies@3.14.2":
   version "3.14.2"
-  resolved "https://registry.npm.taobao.org/@lerna/symlink-dependencies/download/@lerna/symlink-dependencies-3.14.2.tgz#e6b2a9544ff26addc1f4324734595e2f71dfc795"
-  integrity sha1-5rKpVE/yat3B9DJHNFleL3Hfx5U=
+  resolved "https://registry.npmjs.org/@lerna/symlink-dependencies/-/symlink-dependencies-3.14.2.tgz#e6b2a9544ff26addc1f4324734595e2f71dfc795"
+  integrity sha512-Ox7WKXnHZ7IwWlejcCq3n0Hd/yMLv8AwIryhvWxM/RauAge+ML4wg578SsdCyKob8ecgm/R0ytHiU06j81iL1w==
   dependencies:
     "@lerna/create-symlink" "3.14.0"
     "@lerna/resolve-symlink" "3.13.0"
@@ -1961,8 +1969,8 @@
 
 "@lerna/version@3.15.0":
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/@lerna/version/download/@lerna/version-3.15.0.tgz#3c65d223d94f211312995266abb07ee6606d5f73"
-  integrity sha1-PGXSI9lPIRMSmVJmq7B+5mBtX3M=
+  resolved "https://registry.npmjs.org/@lerna/version/-/version-3.15.0.tgz#3c65d223d94f211312995266abb07ee6606d5f73"
+  integrity sha512-vReYX1NMXZ9PwzTZm97wAl/k3bmRnRZhnQi3mq/m49xTnDavq7p4sbUdFpvu8cVZNKnYS02pNIVGHrQw+K8ZCw==
   dependencies:
     "@lerna/check-working-tree" "3.14.2"
     "@lerna/child-process" "3.14.2"
@@ -8663,8 +8671,8 @@ left-pad@^1.3.0:
 
 lerna@^3.15.0:
   version "3.15.0"
-  resolved "https://registry.npm.taobao.org/lerna/download/lerna-3.15.0.tgz#b044dba8138d7a1a8dd48ac1d80e7541bdde0d1f"
-  integrity sha1-sETbqBONehqN1IrB2A51Qb3eDR8=
+  resolved "https://registry.npmjs.org/lerna/-/lerna-3.15.0.tgz#b044dba8138d7a1a8dd48ac1d80e7541bdde0d1f"
+  integrity sha512-kRIQ3bgzkmew5/WZQ0C9WjH0IUf3ZmTNnBwTHfXgLkVY7td0lbwMQFD7zehflUn0zG4ou54o/gn+IfjF0ti/5A==
   dependencies:
     "@lerna/add" "3.15.0"
     "@lerna/bootstrap" "3.15.0"
