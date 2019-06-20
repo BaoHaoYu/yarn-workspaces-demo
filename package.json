@@ -10,7 +10,7 @@
     "build:w": "rollup -c rollup.config.js -w",
     "tslint": "tslint --fix packages/**/*{.ts,.tsx} .storybook/*.ts stories/**/*{.ts,.tsx}",
     "stylelint": "stylelint --fix packages/**/*.scss",
-    "release": "lerna publish --no-git-tag-version  --no-push",
+    "release": "lerna publish --no-git-tag-version --dist-tag next --no-push",
     "link": "lerna exec -- yarn link",
     "updated": "lerna updated",
     "changed": "lerna changed",
