@@ -4,7 +4,7 @@ import * as React from 'react'
 import s from './style.scss'
 
 export interface IProps {
-  value?: string
+  value: string
 }
 
 const p1: React.FunctionComponent<IProps> = (props) => {
