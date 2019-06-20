@@ -15,6 +15,7 @@
 - [注意](#%E6%B3%A8%E6%84%8F)
     - [Annotated Tags](#Annotated-Tags)
     - [--no-git-tag-version](#no-git-tag-version)
+    - [--no-git-reset](#no-git-reset)
 <!-- tocstop -->
 
 ## 作用
@@ -85,5 +86,10 @@ v0.0.1
 ```
 
 #### --no-git-tag-version
-`lerna publish --no-git-tag-version`推送到`npm`的时候，取消自动打标签，加入这个命令后，`lerna`不会自动更新包的版本了
+- `lerna publish --no-git-tag-version`：取消自动打标签，`lerna`不会自动更新包的版本了
 `pack1`版本是`0.0.1`，推送到`npm`后，本地依旧是`0.0.1`
+- `lerna publish`：自动更新包的版本，为最后的提交打上每个包的版本标签，然后再推送
+
+#### --no-git-reset
+- `lerna publish --no-git-reset`:`lerna`自动更新包的版本了
+- `lerna publish`:`lerna`根据上个标签的更新包的版本
