@@ -1,6 +1,6 @@
 {
   "name": "@lerna-demo/p1",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "larna demo",
   "license": "MIT",
   "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p1",
