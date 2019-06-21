@@ -10,8 +10,8 @@ export interface IProps {
 const p1: React.FunctionComponent<IProps> = (props) => {
   return (
     <div className={s.p1}>
-        <h1> {props.value}
-        </h1>
+      <h1> 
+      {props.value}</h1>
       <P2 />
     </div>
   )
