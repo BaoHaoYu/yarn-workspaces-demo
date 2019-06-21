@@ -1,0 +1,26 @@
+{
+  "trailingComma": "es5",
+  "printWidth": 80,
+
+  "parser": "typescript",
+  "semi": false,
+  "arrowParens": "always",
+  "useTabs": false,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "overrides": [{
+    "files": [
+      ".storybook/*.ts",
+      "packages/**/*.ts",
+      "webpack-ts/**/*.ts",
+      "stories/**/*.tsx",
+      "!**/dist",
+    ],
+    "parser": "babylon",
+    "options": {
+      "trailingComma": "all"
+    }
+  }]
+}
