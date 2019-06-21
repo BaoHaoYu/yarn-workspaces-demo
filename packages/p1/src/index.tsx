@@ -4,15 +4,14 @@ import * as React from 'react'
 import s from './style.scss'
 
 export interface IProps {
-   value: string
+  value: string
 }
 
-const   p1: React.FunctionComponent<IProps> = (props) => {
+const p1: React.FunctionComponent<IProps> = (props) => {
   return (
-        <div className={ s.p1}>
-        <h1>
-        {  props.value}
-          </h1>
+    <div className={s.p1}>
+        <h1> {props.value}
+        </h1>
       <P2 />
     </div>
   )
