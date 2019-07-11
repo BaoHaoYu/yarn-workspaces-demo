@@ -11,7 +11,7 @@
     "tslint": "tslint --fix packages/**/*{.ts,.tsx} .storybook/*.ts stories/**/*{.ts,.tsx}",
     "stylelint": "stylelint --fix packages/**/*.scss",
     "prettier": "prettier --write packages/**/*{.ts,.tsx}",
-    "release": "lerna publish --tag-version-prefix='ddd' --no-push",
+    "release": "lerna publish --no-push",
     "link": "lerna exec -- yarn link",
     "updated": "lerna updated",
     "changed": "lerna changed",
