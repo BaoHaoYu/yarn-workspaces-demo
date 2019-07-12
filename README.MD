@@ -12,10 +12,12 @@
     - [格式化ts](#%E6%A0%BC%E5%BC%8F%E5%8C%96ts)
     - [发布到npm](#%E5%8F%91%E5%B8%83%E5%88%B0npm)
 - [特性](#%E7%89%B9%E6%80%A7)
-- [注意](#%E6%B3%A8%E6%84%8F)
+- [发布](#%E5%8F%91%E5%B8%83)
+    - [.npmrc](#npmrc)
     - [Annotated Tags](#Annotated-Tags)
     - [--no-git-tag-version](#no-git-tag-version)
     - [--no-git-reset](#no-git-reset)
+- [TODO](#TODO)
 <!-- tocstop -->
 
 ## 作用
@@ -62,10 +64,16 @@ rollup + yarn workspaces 管理多个包
 - `storybook`  √
 - `push to npm` √
 - `jest` √
+- `husky` √
+- `lint-staged` √
 
-## 注意
+## 发布
 > 要打上标签，`lerna diff`对比的是上个打上标签的提交，和最后提交这俩个提交进行对比的
 > 所以，建议每次发布都打上标签如 v0.0.1，v0.0.2之类的，Annotated Tags语句
+
+#### .npmrc
+填写`token`到`.npmrc`中，内容如下
+`//registry.npmjs.org/:_authToken=.................`
 
 #### Annotated Tags
 `git tag -a v0.0.1 -m "my version 0.0.1"`
@@ -90,6 +98,11 @@ v0.0.1
 `pack1`版本是`0.0.1`，推送到`npm`后，本地依旧是`0.0.1`
 - `lerna publish`：自动更新包的版本，为最后的提交打上每个包的版本标签，然后再推送
 
+lerna只会找当前的分支进行标签对比，然后判断是否要发布，如果标签打在其他分支上面，lerna会忽略
+
 #### --no-git-reset
 - `lerna publish --no-git-reset`:`lerna`自动更新包的版本了
 - `lerna publish`:`lerna`根据上个标签的更新包的版本
+
+## TODO
+- tslint.json的exclude无效
