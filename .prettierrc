@@ -7,7 +7,7 @@
   "arrowParens": "always",
   "useTabs": false,
   "bracketSpacing": true,
-  "jsxBracketSameLine": true,
+  "jsxBracketSameLine": false,
   "tabWidth": 2,
   "singleQuote": true,
   "overrides": [{

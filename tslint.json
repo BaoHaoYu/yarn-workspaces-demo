@@ -11,14 +11,9 @@
     "prettier": true
   },
   "rulesDirectory": ["tslint-plugin-prettier"],
-  "include": [
-    "packages",
-    "webpack-ts",
-    ".storybook",
-    "stories"
-  ],
-  "exclude": [
-    "node_modlues",
-    "dist/"
-  ]
+  "linterOptions": {
+    "exclude": [
+      "**/node_modules/**"
+    ]
+  }
 }
