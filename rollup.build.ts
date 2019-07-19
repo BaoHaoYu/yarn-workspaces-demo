@@ -106,7 +106,7 @@ function rollupConfigs(packages: string[]): Array<RollupOutput & InputOptions> {
             include: [path.join(libRoot, 'src')],
           },
           typescript: ts,
-          tsconfig: path.join(__dirname, 'tsconfig-main.json'),
+          tsconfig: path.join(__dirname, 'tsconfig.main.json'),
         }),
         commonjs({
           include: path.join(__dirname, 'node_modules/**'),

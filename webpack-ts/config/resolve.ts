@@ -6,7 +6,7 @@ import { rootPath } from '../../config/base'
 const resolve: webpack.Resolve = {
   plugins: [
     new TsconfigPathsPlugin({
-      configFile: path.join(rootPath, 'tsconfig-main.json'),
+      configFile: path.join(rootPath, 'tsconfig.main.json'),
     }),
   ],
   extensions: ['.ts', '.tsx', '.js', '.jsx'],
