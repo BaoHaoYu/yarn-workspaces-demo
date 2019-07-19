@@ -2,7 +2,6 @@
 .rpt2_cache
 .idea/
 .npmrc
-.jest-test-results.json
 
 node_modules
 dist
