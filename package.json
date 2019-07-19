@@ -6,16 +6,19 @@
     "packages/*"
   ],
   "scripts": {
+    "build:changed": "ts-node rollup.build.ts --type changed",
+    "build:all": "ts-node rollup.build.ts --type all",
     "build": "rollup -c rollup.config.js",
     "build:w": "rollup -c rollup.config.js -w",
-    "tslint": "tslint --fix packages/**/*{.ts,.tsx} .storybook/*.ts stories/**/*{.ts,.tsx}",
+    "tslint": "tslint --fix packages/**/*{.ts,.tsx} .storybook/*.ts stories/**/*{.ts,.tsx} webpack-ts/**/* config/*.ts",
     "stylelint": "stylelint --fix packages/**/*.scss",
     "prettier": "prettier --write packages/**/*{.ts,.tsx}",
     "release": "lerna publish --no-push",
     "link": "lerna exec -- yarn link",
     "updated": "lerna updated",
-    "changed": "lerna changed",
+    "changed": "lerna changed --json",
     "diff": "lerna diff",
+    "server": "ts-node server/bin/www.ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
@@ -47,6 +50,7 @@
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/fs-extra": "^7.0.0",
     "@types/jest": "^24.0.15",
+    "@types/postcss-url": "^8.0.1",
     "@types/storybook__addon-actions": "^3.4.3",
     "@types/storybook__addon-info": "^4.1.2",
     "@types/storybook__addon-jest": "^3.4.3",
@@ -54,6 +58,7 @@
     "@types/storybook__addon-links": "^3.3.5",
     "@types/storybook__react": "^4.0.2",
     "@types/webpack": "^4.4.32",
+    "@types/yargs-parser": "^13.0.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
     "enzyme": "^3.10.0",
@@ -94,6 +99,7 @@
     "typescript": "^3.5.2",
     "url": "^0.11.0",
     "url-loader": "^2.0.0",
-    "webpack": "^4.34.0"
+    "webpack": "^4.34.0",
+    "yargs-parser": "^13.1.1"
   }
 }
