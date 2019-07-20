@@ -6,7 +6,6 @@ import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import * as React from 'react'
 import P1, { IProps } from '../../packages/p1/src'
-
 // @ts-ignore
 import s from '../../packages/p1/src/style.scss'
 Enzyme.configure({ adapter: new Adapter() })
