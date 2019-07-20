@@ -14,6 +14,7 @@
     "packages",
     "stories",
     ".storybook/*",
+    "webpack.config.ts",
     "rollup.build.ts"
   ],
   "exclude": [

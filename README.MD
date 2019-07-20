@@ -12,6 +12,7 @@
     - [格式化ts](#%E6%A0%BC%E5%BC%8F%E5%8C%96ts)
     - [发布到npm](#%E5%8F%91%E5%B8%83%E5%88%B0npm)
 - [特性](#%E7%89%B9%E6%80%A7)
+- [单元测试](#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95)
 - [发布](#%E5%8F%91%E5%B8%83)
     - [.npmrc](#npmrc)
     - [Annotated Tags](#Annotated-Tags)
@@ -65,6 +66,9 @@ rollup + yarn workspaces 管理多个包
 - `jest` √
 - `husky` √
 - `lint-staged` √
+
+## 单元测试
+[mocha-examples](https://github.com/mochajs/mocha-examples)
 
 ## 发布
 > 要打上标签，`lerna diff`对比的是上个打上标签的提交，和最后提交这俩个提交进行对比的
