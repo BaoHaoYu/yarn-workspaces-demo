@@ -21,8 +21,8 @@
     "server": "ts-node server/bin/www.ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "test": "jest"
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json --watch",
+    "test": "jest --watch"
   },
   "husky": {
     "hooks": {

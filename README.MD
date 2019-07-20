@@ -17,7 +17,6 @@
     - [Annotated Tags](#Annotated-Tags)
     - [--no-git-tag-version](#no-git-tag-version)
     - [--no-git-reset](#no-git-reset)
-- [TODO](#TODO)
 <!-- tocstop -->
 
 ## 作用
@@ -103,6 +102,3 @@ lerna只会找当前的分支进行标签对比，然后判断是否要发布，
 #### --no-git-reset
 - `lerna publish --no-git-reset`:`lerna`自动更新包的版本了
 - `lerna publish`:`lerna`根据上个标签的更新包的版本
-
-## TODO
-- tslint.json的exclude无效

@@ -8,9 +8,19 @@ export interface IProps {
 }
 
 const p1: React.FunctionComponent<IProps> = (props) => {
+  const [state, setState] = React.useState({ msg: '' })
+  const changeMsg = () => {
+    setState({ msg: 'hehehehehe' })
+  }
   return (
     <div className={s.p1}>
-      <h1>{props.value} new </h1>
+      <h1>{props.value}</h1>
+
+      <h3>{state.msg}</h3>
+
+      <div className={s.p1__change} onClick={changeMsg}>
+        change msg
+      </div>
       <P2 />
     </div>
   )
