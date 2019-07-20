@@ -3,7 +3,7 @@
       "packages/**/*{.ts,.tsx}": "tslint --fix",
       "stories/**/*{.ts,.tsx}": "tslint --fix",
       ".storybook/*.ts": "tslint --fix",
-      "packages/**/*.scss": "tslint --fix"
+      "packages/**/*.scss": "stylelint --fix"
     },
     "ignore": ["**/dist/*.{ts,tsx}"]
 }
