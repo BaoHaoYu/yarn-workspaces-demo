@@ -23,7 +23,7 @@
     "build-storybook": "build-storybook",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json --watch",
     "test": "mocha --watch",
-    "nyc": "nyc npm run test"
+    "nyc": "nyc mocha"
   },
   "husky": {
     "hooks": {
