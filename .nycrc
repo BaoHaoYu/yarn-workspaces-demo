@@ -2,7 +2,9 @@
   "extends": "@istanbuljs/nyc-config-typescript",
   "include": [
     "packages/**/*.ts",
-    "packages/**/*.tsx"
+    "packages/**/*.tsx",
+    "stories/**/*.ts",
+    "stories/**/*.tsx"
   ],
   "exclude": [
     "**/*.d.ts"
@@ -15,8 +17,7 @@
     "ts-node/register"
   ],
   "reporter": [
-    "text",
-    "html"
+    "text"
   ],
   "sourceMap": true,
   "instrument": true,
