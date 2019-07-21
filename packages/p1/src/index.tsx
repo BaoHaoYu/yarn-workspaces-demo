@@ -1,8 +1,8 @@
 import P2 from '@lerna-demo/p2'
+import 'lodash-es'
 import * as React from 'react'
 // @ts-ignore
 import s from './style.scss'
-
 export interface IProps {
   value: string
 }
