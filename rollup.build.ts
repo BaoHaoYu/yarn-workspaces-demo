@@ -75,10 +75,7 @@ child_process.exec('npm run changed', async (error, stdout: string, stderr) => {
  * @param packages 包的路径
  */
 function rollupConfigs(packages: string[]): Array<RollupOutput & InputOptions> {
-  const pkgAbPaths: string[] = globby.sync([
-    ...packages,
-    '!packages/sass-mixin/package.json',
-  ])
+  const pkgAbPaths: string[] = globby.sync(packages)
 
   return pkgAbPaths.map<any>((pPath) => {
     const pkg = fse.readJsonSync(pPath)
@@ -97,6 +94,7 @@ function rollupConfigs(packages: string[]): Array<RollupOutput & InputOptions> {
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }),
         typescript({
+          check: false,
           tsconfigOverride: {
             compilerOptions: {
               baseUrl: libRoot,
@@ -106,7 +104,7 @@ function rollupConfigs(packages: string[]): Array<RollupOutput & InputOptions> {
             include: [path.join(libRoot, 'src')],
           },
           typescript: ts,
-          tsconfig: path.join(__dirname, 'tsconfig.main.json'),
+          tsconfig: path.join(__dirname, 'tsconfig.app.json'),
         }),
         commonjs({
           include: path.join(__dirname, 'node_modules/**'),

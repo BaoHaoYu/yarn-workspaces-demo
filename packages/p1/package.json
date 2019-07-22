@@ -12,12 +12,14 @@
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@types/react": "16.8.20",
-    "@types/react-dom": "16.8.4"
+    "@types/react-dom": "16.8.4",
+    "@types/lodash": "4.14.136"
   },
   "dependencies": {
     "@lerna-demo/p2": "^0.0.21",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "lodash": "^4.17.15"
   },
   "gitHead": "ab768d711d70a34cd01c82e934028c0ddfc2be63"
 }
