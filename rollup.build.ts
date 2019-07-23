@@ -20,15 +20,49 @@ interface IOpt extends InputOptions {
 
 // 命令要做什么，all则编译所有包，changed则编译发生改变的包，默认为all
 const type: 'all' | 'changed' | undefined = yargs(process.argv).type
+run()
 
 /**
- * 获得发生改变的包，每次编译不必全部编译
+ * 流程函数
+ * @param external 排除
  */
-child_process.exec('npm run changed', async (error, stdout: string, stderr) => {
+async function run(ohterPkgPaths: string[] = [], external: string[] = []) {
+  const pkgPaths: string[] = await getPkgPaths(
+    ohterPkgPaths,
+    lernaJson.packages,
+  )
+  const optList = await rollupConfigs(pkgPaths, external)
+
+  // 开始编译
+  await buildAll(optList)
+}
+
+/**
+ * 获得要编译的pkg列表
+ * @param ohterPkgPaths
+ */
+async function getPkgPaths(ohterPkgPaths: string[], lernaPkg: string[]) {
+  let pkgPaths: string[] = []
+  const lernaPkgPaths = lernaPkg.map((p) => path.join(p, 'package.json'))
+  if (type === 'changed') {
+    const changedPkgPaths = await getChangedPkgPaths()
+    pkgPaths = [...changedPkgPaths, ...ohterPkgPaths]
+  } else {
+    pkgPaths = [...lernaPkgPaths, ...ohterPkgPaths]
+  }
+  return pkgPaths
+}
+
+/**
+ * 获得发生改变的包
+ */
+async function getChangedPkgPaths(): Promise<string[]> {
+  const { error, stdout } = await childRun()
   if (error) {
     console.error(error)
-    return
+    return []
   }
+
   const matchPkgStr = stdout.replace(/[\r\n]/g, '').match(/{.+?}/g)
   // 所有发生改变的包
   const changes: Array<{
@@ -48,16 +82,26 @@ child_process.exec('npm run changed', async (error, stdout: string, stderr) => {
     return item.location + '\\package.json'
   })
 
-  // 生成rollup配置
-  const optList = rollupConfigs(
-    type === 'changed'
-      ? changedPkgPaths
-      : lernaJson.packages.map((p) => path.join(p, 'package.json')),
-  )
+  return changedPkgPaths
+}
 
-  // 开始编译
-  await buildAll(optList)
-})
+/**
+ * 子进程运行命令，返回Promise
+ * @param info 命令
+ */
+function childRun(
+  info: string = 'npm run changed',
+): Promise<{
+  error: any
+  stdout: string
+  stderr: string
+}> {
+  return new Promise((r) => {
+    child_process.exec(info, (error, stdout: string, stderr) => {
+      r({ error, stdout, stderr })
+    })
+  })
+}
 
 /**
  * 输出模块
@@ -117,8 +161,11 @@ function logFindChanged(
  * 生成rollup配置
  * @param packages 包的路径
  */
-function rollupConfigs(packages: string[]): IOpt[] {
-  const pkgAbPaths: string[] = globby.sync(packages)
+async function rollupConfigs(
+  packages: string[],
+  external: string[] = [],
+): Promise<IOpt[]> {
+  const pkgAbPaths: string[] = await globby(packages)
 
   return pkgAbPaths.map<any>((pPath) => {
     const pkg = fse.readJsonSync(pPath)
@@ -153,7 +200,7 @@ function rollupConfigs(packages: string[]): IOpt[] {
           include: path.join(__dirname, 'node_modules/**'),
         }),
       ],
-      external: Object.keys(pkg.dependencies),
+      external: [...Object.keys(pkg.dependencies), ...external],
       output: [
         {
           file: path.join(libRoot, pkg.main),
