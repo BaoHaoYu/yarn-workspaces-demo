@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import child_process from 'child_process'
+import execa from 'execa'
 import fse from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
@@ -13,7 +13,6 @@ import typescript from 'rollup-plugin-typescript2'
 import ts from 'typescript'
 import yargs from 'yargs-parser'
 import lernaJson from './lerna.json'
-
 interface IOpt extends InputOptions {
   output: OutputOptions[]
 }
@@ -57,11 +56,7 @@ async function getPkgPaths(ohterPkgPaths: string[], lernaPkg: string[]) {
  * 获得发生改变的包
  */
 async function getChangedPkgPaths(): Promise<string[]> {
-  const { error, stdout } = await childRun()
-  if (error) {
-    console.error(error)
-    return []
-  }
+  const { stdout } = await execa('npm run changed')
 
   const matchPkgStr = stdout.replace(/[\r\n]/g, '').match(/{.+?}/g)
   // 所有发生改变的包
@@ -83,24 +78,6 @@ async function getChangedPkgPaths(): Promise<string[]> {
   })
 
   return changedPkgPaths
-}
-
-/**
- * 子进程运行命令，返回Promise
- * @param info 命令
- */
-function childRun(
-  info: string = 'npm run changed',
-): Promise<{
-  error: any
-  stdout: string
-  stderr: string
-}> {
-  return new Promise((r) => {
-    child_process.exec(info, (error, stdout: string, stderr) => {
-      r({ error, stdout, stderr })
-    })
-  })
 }
 
 /**
