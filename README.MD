@@ -1,21 +1,20 @@
 <!-- toc -->
-- [作用](#%E4%BD%9C%E7%94%A8)
-- [前奏](#%E5%89%8D%E5%A5%8F)
-- [命令](#%E5%91%BD%E4%BB%A4)
-    - [yarn开启工作空间](#yarn%E5%BC%80%E5%90%AF%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4)
-    - [安装依赖](#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96)
-    - [添加新的包到依赖，注意加入`-W`](#%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E5%8C%85%E5%88%B0%E4%BE%9D%E8%B5%96%E6%B3%A8%E6%84%8F%E5%8A%A0%E5%85%A5-W)
-    - [编译所有包](#%E7%BC%96%E8%AF%91%E6%89%80%E6%9C%89%E5%8C%85)
-    - [编译所有包同时监视](#%E7%BC%96%E8%AF%91%E6%89%80%E6%9C%89%E5%8C%85%E5%90%8C%E6%97%B6%E7%9B%91%E8%A7%86)
-    - [启动storybook](#%E5%90%AF%E5%8A%A8storybook)
-    - [启动jest监视，结果输出到.jest-test-results.json](#%E5%90%AF%E5%8A%A8jest%E7%9B%91%E8%A7%86%E7%BB%93%E6%9E%9C%E8%BE%93%E5%87%BA%E5%88%B0jest-test-resultsjson)
-    - [格式化ts](#%E6%A0%BC%E5%BC%8F%E5%8C%96ts)
-    - [发布到npm](#%E5%8F%91%E5%B8%83%E5%88%B0npm)
-- [特性](#%E7%89%B9%E6%80%A7)
-- [单元测试](#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95)
-- [发布](#%E5%8F%91%E5%B8%83)
+- [作用](#%e4%bd%9c%e7%94%a8)
+- [前奏](#%e5%89%8d%e5%a5%8f)
+- [命令](#%e5%91%bd%e4%bb%a4)
+    - [yarn开启工作空间](#yarn%e5%bc%80%e5%90%af%e5%b7%a5%e4%bd%9c%e7%a9%ba%e9%97%b4)
+    - [安装依赖](#%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96)
+    - [添加新的包到依赖，注意加入`-W`](#%e6%b7%bb%e5%8a%a0%e6%96%b0%e7%9a%84%e5%8c%85%e5%88%b0%e4%be%9d%e8%b5%96%e6%b3%a8%e6%84%8f%e5%8a%a0%e5%85%a5-w)
+    - [编译所有包](#%e7%bc%96%e8%af%91%e6%89%80%e6%9c%89%e5%8c%85)
+    - [编译所有包同时监视](#%e7%bc%96%e8%af%91%e6%89%80%e6%9c%89%e5%8c%85%e5%90%8c%e6%97%b6%e7%9b%91%e8%a7%86)
+    - [启动storybook](#%e5%90%af%e5%8a%a8storybook)
+    - [格式化ts](#%e6%a0%bc%e5%bc%8f%e5%8c%96ts)
+    - [发布到npm](#%e5%8f%91%e5%b8%83%e5%88%b0npm)
+- [特性](#%e7%89%b9%e6%80%a7)
+- [单元测试](#%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95)
+- [发布](#%e5%8f%91%e5%b8%83)
     - [.npmrc](#npmrc)
-    - [Annotated Tags](#Annotated-Tags)
+    - [Annotated Tags](#annotated-tags)
     - [--no-git-tag-version](#no-git-tag-version)
     - [--no-git-reset](#no-git-reset)
 <!-- tocstop -->
@@ -47,10 +46,6 @@ rollup + yarn workspaces 管理多个包
 `npm run storybook`
 打开 http://localhost:6006
 
-#### 启动jest监视，结果输出到.jest-test-results.json
-如果storybook需要显示jest结果，则要执行该命令  
-`npm run test:generate-output`
-
 #### 格式化ts
 `npm run tslint`
 
@@ -63,7 +58,6 @@ rollup + yarn workspaces 管理多个包
 - `stylelint`  √
 - `storybook`  √
 - `push to npm` √
-- `jest` √
 - `husky` √
 - `lint-staged` √
 
