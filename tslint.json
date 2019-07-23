@@ -8,7 +8,8 @@
   "rules": {
     "object-literal-sort-keys": false,
     "no-console": false,
-    "prettier": true
+    "prettier": true,
+    "no-floating-promises": false
   },
   "rulesDirectory": ["tslint-plugin-prettier"],
   "linterOptions": {
