@@ -56,7 +56,7 @@ async function getPkgPaths(ohterPkgPaths: string[], lernaPkg: string[]) {
  * 获得发生改变的包
  */
 async function getChangedPkgPaths(): Promise<string[]> {
-  const { stdout } = await execa('npm run changed')
+  const { stdout } = await execa('lerna changed --json')
 
   const matchPkgStr = stdout.replace(/[\r\n]/g, '').match(/{.+?}/g)
   // 所有发生改变的包
@@ -68,9 +68,7 @@ async function getChangedPkgPaths(): Promise<string[]> {
     return JSON.parse(item)
   })
   // 如果发生改变，输出日志
-  if (type === 'changed') {
-    logFindChanged(changes)
-  }
+  logFindChanged(changes)
 
   // 改变的包的package.json路径
   const changedPkgPaths = changes.map((item) => {
