@@ -26,11 +26,8 @@ run()
  * @param external 排除
  */
 async function run(ohterPkgPaths: string[] = [], external: string[] = []) {
-  const pkgPaths: string[] = await getPkgPaths(
-    ohterPkgPaths,
-    lernaJson.packages,
-  )
-  const optList = await rollupConfigs(pkgPaths, external)
+  const pkgPaths: string[] = await getPkgPaths(lernaJson.packages)
+  const optList = await rollupConfigs([...pkgPaths, ...ohterPkgPaths], external)
 
   // 开始编译
   await buildAll(optList)
@@ -40,14 +37,16 @@ async function run(ohterPkgPaths: string[] = [], external: string[] = []) {
  * 获得要编译的pkg列表
  * @param ohterPkgPaths
  */
-async function getPkgPaths(ohterPkgPaths: string[], lernaPkg: string[]) {
+async function getPkgPaths(lernaPkg: string[]) {
   let pkgPaths: string[] = []
   const lernaPkgPaths = lernaPkg.map((p) => path.join(p, 'package.json'))
   if (type === 'changed') {
-    const changedPkgPaths = await getChangedPkgPaths()
-    pkgPaths = [...changedPkgPaths, ...ohterPkgPaths]
+    const changes = await getChangedPkgPaths()
+    // 如果发生改变，输出日志
+    logFindChanged(changes)
+    pkgPaths = changes.map((p) => path.join(p.location, 'package.json'))
   } else {
-    pkgPaths = [...lernaPkgPaths, ...ohterPkgPaths]
+    pkgPaths = lernaPkgPaths
   }
   return pkgPaths
 }
@@ -55,27 +54,20 @@ async function getPkgPaths(ohterPkgPaths: string[], lernaPkg: string[]) {
 /**
  * 获得发生改变的包
  */
-async function getChangedPkgPaths(): Promise<string[]> {
-  const { stdout } = await execa('lerna changed --json')
-
-  const matchPkgStr = stdout.replace(/[\r\n]/g, '').match(/{.+?}/g)
-  // 所有发生改变的包
-  const changes: Array<{
+async function getChangedPkgPaths(): Promise<
+  Array<{
     name: string
     location: string
     version: string
-  }> = (matchPkgStr || []).map((item) => {
+  }>
+> {
+  const { stdout } = await execa('lerna changed --json')
+
+  const matchPkgStr = stdout.replace(/[\r\n]/g, '').match(/{.+?}/g)
+
+  return (matchPkgStr || []).map((item) => {
     return JSON.parse(item)
   })
-  // 如果发生改变，输出日志
-  logFindChanged(changes)
-
-  // 改变的包的package.json路径
-  const changedPkgPaths = changes.map((item) => {
-    return item.location + '\\package.json'
-  })
-
-  return changedPkgPaths
 }
 
 /**
@@ -85,7 +77,7 @@ async function outPut(bundle: any, output: OutputOptions[]) {
   for (const out of output) {
     // await bundle.generate(outOpt)
     await bundle.write(out)
-    console.log(chalk.hex('#3fda00')('finish: ') + out.file)
+    console.log(chalk.hex('#3fda00')('output: ') + out.file)
   }
 }
 
