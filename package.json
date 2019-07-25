@@ -5,6 +5,15 @@
   "workspaces": [
     "packages/*"
   ],
+  "author": {
+    "name": "bhy"
+  },
+  "description": "Manage multiple packages with lerna and storybook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaoHaoYu/yarn-workspaces-demo.git"
+  },
+  "homepage": "https://github.com/BaoHaoYu/yarn-workspaces-demo#readme",
   "scripts": {
     "build:changed": "ts-node rollup.build.ts --type changed",
     "build:all": "ts-node rollup.build.ts --type all",
