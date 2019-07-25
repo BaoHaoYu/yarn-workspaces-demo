@@ -2,20 +2,19 @@
   "extends": [
     "tslint:recommended",
     "tslint-react",
-    "tslint-config-standard"
+    "tslint-config-standard",
+    "tslint-config-prettier"
   ],
   "rules": {
     "object-literal-sort-keys": false,
-    "no-console": false
+    "no-console": false,
+    "prettier": true,
+    "no-floating-promises": false
   },
-  "include": [
-    "packages",
-    "webpack-ts",
-    ".storybook",
-    "stories"
-  ],
-  "exclude": [
-    "node_modlues",
-    "dist"
-  ]
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "**/node_modules/**"
+    ]
+  }
 }

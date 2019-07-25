@@ -1,6 +1,6 @@
 {
   "name": "@lerna-demo/p1",
-  "version": "0.0.22",
+  "version": "0.0.27",
   "description": "larna demo",
   "license": "MIT",
   "repository": "https://github.com/BaoHaoYu/yarn-workspaces-demo/tree/master/packages/p1",
@@ -12,12 +12,14 @@
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@types/react": "16.8.20",
-    "@types/react-dom": "16.8.4"
+    "@types/react-dom": "16.8.4",
+    "@types/lodash": "4.14.136"
   },
   "dependencies": {
-    "@lerna-demo/p2": "^0.0.17",
+    "@lerna-demo/p2": "^0.0.21",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "lodash": "^4.17.15"
   },
-  "gitHead": "e67c0da86161c26f1d3fef8e373fe31422ce9e34"
+  "gitHead": "ab768d711d70a34cd01c82e934028c0ddfc2be63"
 }

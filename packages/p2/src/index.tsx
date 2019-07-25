@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-export default function () {
+export default function() {
   return (
-        <h2>
-            p2
-        </h2>
+    <h2>
+      <div>p2</div>
+    </h2>
   )
 }

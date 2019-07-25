@@ -7,38 +7,38 @@ import webpack from 'webpack'
  * @return {*[]}
  * @param p
  */
-export default function cssModules (p: { loader: string, sourceMap: boolean }):
-    webpack.RuleSetUse {
+export default function cssModules(p: {
+  loader: string
+  sourceMap: boolean
+}): webpack.RuleSetUse {
   return [
     {
-      loader: 'style-loader'
+      loader: 'style-loader',
     },
     {
       loader: 'css-loader',
       options: {
         modules: {
-          localIdentName: '[path][name]__[local]--[hash:base64:5]'
+          localIdentName: '[path][name]__[local]--[hash:base64:5]',
         },
         sourceMap: p.sourceMap,
-        importLoaders: 1
-      }
+        importLoaders: 1,
+      },
     },
     {
       loader: 'postcss-loader',
       options: {
         sourceMap: p.sourceMap,
-        plugins () {
-          return [
-            precss
-          ]
-        }
-      }
+        plugins() {
+          return [precss]
+        },
+      },
     },
     {
       loader: p.loader,
       options: {
-        sourceMap: p.sourceMap
-      }
-    }
+        sourceMap: p.sourceMap,
+      },
+    },
   ]
 }

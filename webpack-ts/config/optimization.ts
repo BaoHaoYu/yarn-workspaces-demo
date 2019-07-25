@@ -7,10 +7,10 @@ const optimization: webpack.Options.Optimization = {
       vendors: {
         test: /[\\/]node_modules[\\/]/,
         name: 'verdor',
-        chunks: 'initial'
-      }
-    }
-  }
+        chunks: 'initial',
+      },
+    },
+  },
 }
 
 export default optimization

@@ -2,10 +2,9 @@
 .rpt2_cache
 .idea/
 .npmrc
-.jest-test-results.json
+.nyc_output
 
 node_modules
 dist
 yarn-error.log
-storybook-static
 coverage/

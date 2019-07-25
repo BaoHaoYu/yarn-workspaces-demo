@@ -13,8 +13,4 @@ storiesOf('p1', module)
         <P1 value={v} />
       </div>
     )
-  },
-  {
-    jest: ['p1']
-  }
-  )
+  })

@@ -4,12 +4,19 @@
     "module": "commonjs",
     "target": "es5",
     "baseUrl": ".",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "types",
+      "node_modules/@types"
+    ]
   },
   "include": [
     "packages",
     "stories",
-    ".storybook/*"
+    ".storybook/*",
+    "util/*",
+    "webpack.config.ts",
+    "rollup.build.ts"
   ],
   "exclude": [
     "node_modules",

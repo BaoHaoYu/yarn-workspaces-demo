@@ -41,7 +41,7 @@ const config = globby.sync('packages/*/package.json').map((pPath) => {
                     ]
                 },
                 typescript: ts,
-                tsconfig: path.join(__dirname, 'tsconfig-main.json')
+                tsconfig: path.join(__dirname, 'tsconfig.app.json')
             }),
             commonjs({
                 include: path.join(__dirname, 'node_modules/**'),

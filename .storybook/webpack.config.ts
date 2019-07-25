@@ -13,6 +13,6 @@ export default {
   resolve,
   mode: 'development',
   module: {
-    rules: rules(true)
-  }
+    rules: rules(true),
+  },
 } as webpack.Configuration

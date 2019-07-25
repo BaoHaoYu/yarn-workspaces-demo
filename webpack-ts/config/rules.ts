@@ -1,8 +1,8 @@
-import webpack from 'webpack'
-import cssModules from './useCssModules'
-import { rootPath } from '../../config/base'
 import path from 'path'
-export default function (sourceMap: boolean): webpack.RuleSetRule[] {
+import webpack from 'webpack'
+import { rootPath } from '../../config/base'
+import cssModules from './useCssModules'
+export default function(sourceMap: boolean): webpack.RuleSetRule[] {
   return [
     {
       test: /\.stories\.tsx?$/,
@@ -10,9 +10,9 @@ export default function (sourceMap: boolean): webpack.RuleSetRule[] {
       use: [
         {
           loader: '@storybook/addon-storysource/loader',
-          options: { parser: 'typescript' }
-        }
-      ]
+          options: { parser: 'typescript' },
+        },
+      ],
     },
     {
       test: /\.(tsx|jsx|ts)?$/,
@@ -22,21 +22,18 @@ export default function (sourceMap: boolean): webpack.RuleSetRule[] {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
-            configFile: path.join(rootPath, '.babelrc')
-          }
-        }
-      ]
+            configFile: path.join(rootPath, '.babelrc'),
+          },
+        },
+      ],
     },
     {
       test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader'
-      ]
+      use: ['style-loader', 'css-loader'],
     },
     {
       test: /\.scss/,
-      use: cssModules({ loader: 'sass-loader', sourceMap })
+      use: cssModules({ loader: 'sass-loader', sourceMap }),
     },
     {
       test: /\.(png|jpg|svg)$/,
@@ -44,10 +41,10 @@ export default function (sourceMap: boolean): webpack.RuleSetRule[] {
         {
           loader: 'url-loader',
           options: {
-            limit: 8192
-          }
-        }
-      ]
-    }
+            limit: 8192,
+          },
+        },
+      ],
+    },
   ]
 }
