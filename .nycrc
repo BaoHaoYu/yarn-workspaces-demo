@@ -2,9 +2,7 @@
   "extends": "@istanbuljs/nyc-config-typescript",
   "include": [
     "packages/**/*.ts",
-    "packages/**/*.tsx",
-    "stories/**/*.ts",
-    "stories/**/*.tsx"
+    "packages/**/*.tsx"
   ],
   "exclude": [
     "**/*.d.ts"
