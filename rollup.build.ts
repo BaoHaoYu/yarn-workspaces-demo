@@ -23,6 +23,7 @@ run()
 
 /**
  * 流程函数
+ * @param ohterPkgPaths 其他pkg路径
  * @param external 排除
  */
 async function run(ohterPkgPaths: string[] = [], external: string[] = []) {
