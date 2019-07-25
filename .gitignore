@@ -7,5 +7,4 @@
 node_modules
 dist
 yarn-error.log
-storybook-static
 coverage/
