@@ -1,11 +1,11 @@
 import chalk from 'chalk'
-import child_process from 'child_process'
+import execa from 'execa'
 import fse from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
 import url from 'postcss-url'
 import precss from 'precss'
-import { InputOptions, OutputOptions, rollup, RollupOutput } from 'rollup'
+import { InputOptions, OutputOptions, rollup } from 'rollup'
 import commonjs from 'rollup-plugin-commonjs'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import pluPostcss from 'rollup-plugin-postcss'
@@ -13,79 +13,134 @@ import typescript from 'rollup-plugin-typescript2'
 import ts from 'typescript'
 import yargs from 'yargs-parser'
 import lernaJson from './lerna.json'
+interface IOpt extends InputOptions {
+  output: OutputOptions[]
+}
 
 // 命令要做什么，all则编译所有包，changed则编译发生改变的包，默认为all
 const type: 'all' | 'changed' | undefined = yargs(process.argv).type
+run()
 
 /**
- * 获得发生改变的包，每次编译不必全部编译
+ * 流程函数
+ * @param ohterPkgPaths 其他pkg路径
+ * @param external 排除
  */
-child_process.exec('npm run changed', async (error, stdout: string, stderr) => {
-  if (error) {
-    console.error(error)
-    return
+async function run(ohterPkgPaths: string[] = [], external: string[] = []) {
+  const pkgPaths: string[] = await getPkgPaths(lernaJson.packages)
+  const optList = await rollupConfigs([...pkgPaths, ...ohterPkgPaths], external)
+
+  // 开始编译
+  await buildAll(optList)
+}
+
+/**
+ * 获得要编译的pkg列表
+ * @param ohterPkgPaths
+ */
+async function getPkgPaths(lernaPkg: string[]) {
+  let pkgPaths: string[] = []
+  const lernaPkgPaths = lernaPkg.map((p) => path.join(p, 'package.json'))
+  if (type === 'changed') {
+    const changes = await getChangedPkgPaths()
+    // 如果发生改变，输出日志
+    logFindChanged(changes)
+    pkgPaths = changes.map((p) => path.join(p.location, 'package.json'))
+  } else {
+    pkgPaths = lernaPkgPaths
   }
-  const matchPkgStr = stdout.replace(/[\r\n]/g, '').match(/{.+?}/g)
-  const changes: Array<{
+  return pkgPaths
+}
+
+/**
+ * 获得发生改变的包
+ */
+async function getChangedPkgPaths(): Promise<
+  Array<{
     name: string
     location: string
     version: string
-  }> = (matchPkgStr || []).map((item) => {
+  }>
+> {
+  const { stdout } = await execa('lerna changed --json')
+
+  const matchPkgStr = stdout.replace(/[\r\n]/g, '').match(/{.+?}/g)
+
+  return (matchPkgStr || []).map((item) => {
     return JSON.parse(item)
   })
-  if (type === 'changed') {
-    logFindChanged(changes)
+}
+
+/**
+ * 输出模块
+ */
+async function outPut(bundle: any, output: OutputOptions[]) {
+  for (const out of output) {
+    // await bundle.generate(outOpt)
+    await bundle.write(out)
+    console.log(chalk.hex('#3fda00')('output: ') + out.file)
   }
+}
+
+/**
+ * 通过rollup编译optList中的所有包
+ */
+async function buildAll(optList: IOpt[]) {
+  for (const opt of optList) {
+    await buildOne(opt)
+  }
+}
+
+/**
+ * 通过rollup编译单个包
+ */
+async function buildOne(opt: IOpt) {
+  console.log(chalk.hex('#009dff')('build: ') + opt.input)
+
+  // 打包
+  const bundle = await rollup({
+    input: opt.input,
+    plugins: opt.plugins,
+    external: opt.external,
+  })
+
+  await outPut(bundle, opt.output)
+}
+
+/**
+ * 打印找到发生改变的包的日志
+ * @param changes 发生改变的pkg
+ */
+function logFindChanged(
+  changes: Array<{ name: string; location: string; version: string }>,
+) {
+  console.log(
+    chalk
+      .hex('#009dff')
+      .bold('find changed: ' + (changes.length === 0 ? 'nothing changed' : '')),
+  )
+
   changes.map((item) => {
     console.log(item.name)
   })
-
-  const changedPkgPaths = changes.map((item) => {
-    return item.location + '\\package.json'
-  })
-
-  const optList = rollupConfigs(
-    type === 'changed'
-      ? changedPkgPaths
-      : lernaJson.packages.map((p) => path.join(p, 'package.json')),
-  )
-
-  optList.map(async (opt, index) => {
-    console.log(chalk.hex('#009dff')('build: ') + opt.input)
-
-    // 打包
-    const bundle = await rollup({
-      input: opt.input,
-      plugins: opt.plugins,
-      external: opt.external,
-    })
-
-    // 输出
-    opt.output.map(async (out) => {
-      const outOpt = out as OutputOptions
-      await bundle.generate(outOpt)
-      await bundle.write(outOpt)
-      console.log(chalk.hex('#3fda00')('finish: ') + outOpt.file)
-    })
-  })
-})
+}
 
 /**
  * 生成rollup配置
  * @param packages 包的路径
  */
-function rollupConfigs(packages: string[]): Array<RollupOutput & InputOptions> {
-  const pkgAbPaths: string[] = globby.sync([
-    ...packages,
-    '!packages/sass-mixin/package.json',
-  ])
+async function rollupConfigs(
+  packages: string[],
+  external: string[] = [],
+): Promise<IOpt[]> {
+  const pkgAbPaths: string[] = await globby(packages)
 
   return pkgAbPaths.map<any>((pPath) => {
     const pkg = fse.readJsonSync(pPath)
     const libRoot = path.join(pPath, '..')
-
+    const isTsx = fse.existsSync(path.join(libRoot, 'src/index.tsx'))
     return {
-      input: path.join(libRoot, 'src/index.tsx'),
+      input: path.join(libRoot, isTsx ? 'src/index.tsx' : 'src/index.ts'),
       plugins: [
         pluPostcss({
           plugins: [url({ url: 'inline' }), precss],
@@ -97,6 +152,7 @@ function rollupConfigs(packages: string[]): Array<RollupOutput & InputOptions> {
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }),
         typescript({
+          check: false,
           tsconfigOverride: {
             compilerOptions: {
               baseUrl: libRoot,
@@ -106,21 +162,13 @@ function rollupConfigs(packages: string[]): Array<RollupOutput & InputOptions> {
             include: [path.join(libRoot, 'src')],
           },
           typescript: ts,
-          tsconfig: path.join(__dirname, 'tsconfig.main.json'),
+          tsconfig: path.join(__dirname, 'tsconfig.app.json'),
         }),
         commonjs({
           include: path.join(__dirname, 'node_modules/**'),
         }),
       ],
-      external: [
-        'immutable/contrib/cursor',
-        'react-icons/fa',
-        'antd/lib/icon',
-        'antd/lib/menu',
-        'antd/lib/icon/style/css',
-        'antd/lib/menu/style/css',
-        ...Object.keys(pkg.dependencies),
-      ],
+      external: [...Object.keys(pkg.dependencies), ...external],
       output: [
         {
           file: path.join(libRoot, pkg.main),
@@ -139,20 +187,6 @@ function rollupConfigs(packages: string[]): Array<RollupOutput & InputOptions> {
           },
         },
       ],
-    }
+    } as IOpt
   })
-}
-
-/**
- * 打印找到发生改变的包的日志
- * @param changes 发生改变的pkg
- */
-function logFindChanged(
-  changes: Array<{ name: string; location: string; version: string }>,
-) {
-  console.log(
-    chalk
-      .hex('#009dff')
-      .bold('find changed: ' + (changes.length === 0 ? 'nothing changed' : '')),
-  )
 }

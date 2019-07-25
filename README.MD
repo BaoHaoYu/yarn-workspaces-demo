@@ -1,104 +1,107 @@
+[中文](./README_CN.MD)
 <!-- toc -->
-- [作用](#%E4%BD%9C%E7%94%A8)
-- [前奏](#%E5%89%8D%E5%A5%8F)
-- [命令](#%E5%91%BD%E4%BB%A4)
-    - [yarn开启工作空间](#yarn%E5%BC%80%E5%90%AF%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4)
-    - [安装依赖](#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96)
-    - [添加新的包到依赖，注意加入`-W`](#%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E5%8C%85%E5%88%B0%E4%BE%9D%E8%B5%96%E6%B3%A8%E6%84%8F%E5%8A%A0%E5%85%A5-W)
-    - [编译所有包](#%E7%BC%96%E8%AF%91%E6%89%80%E6%9C%89%E5%8C%85)
-    - [编译所有包同时监视](#%E7%BC%96%E8%AF%91%E6%89%80%E6%9C%89%E5%8C%85%E5%90%8C%E6%97%B6%E7%9B%91%E8%A7%86)
-    - [启动storybook](#%E5%90%AF%E5%8A%A8storybook)
-    - [启动jest监视，结果输出到.jest-test-results.json](#%E5%90%AF%E5%8A%A8jest%E7%9B%91%E8%A7%86%E7%BB%93%E6%9E%9C%E8%BE%93%E5%87%BA%E5%88%B0jest-test-resultsjson)
-    - [格式化ts](#%E6%A0%BC%E5%BC%8F%E5%8C%96ts)
-    - [发布到npm](#%E5%8F%91%E5%B8%83%E5%88%B0npm)
-- [特性](#%E7%89%B9%E6%80%A7)
-- [发布](#%E5%8F%91%E5%B8%83)
+- [Role](#role)
+- [Prelude](#prelude)
+- [Command](#command)
+    - [Yarn Open workspace](#yarn-open-workspace)
+    - [Installation dependency](#installation-dependency)
+    - [Add a new package to the dependency, pay attention to join`-W`](#add-a-new-package-to-the-dependency-pay-attention-to-join-w)
+    - [Compile the package that changed](#compile-the-package-that-changed)
+    - [Compile all packages](#compile-all-packages)
+    - [Compile all packages while monitoring](#compile-all-packages-while-monitoring)
+    - [Start the storybook](#start-the-storybook)
+    - [Format ts](#format-ts)
+    - [Publish to npm](#publish-to-npm)
+- [Characteristic](#characteristic)
+- [Release](#release)
     - [.npmrc](#npmrc)
-    - [Annotated Tags](#Annotated-Tags)
+    - [Annotated Tags](#annotated-tags)
     - [--no-git-tag-version](#no-git-tag-version)
     - [--no-git-reset](#no-git-reset)
+- [Unit test](#unit-test)
 <!-- tocstop -->
 
-## 作用
-rollup + yarn workspaces 管理多个包
+## Role
+rollup + yarn workspaces managing multiple packages
 
-## 前奏
-- 如果使用作用域 @lerna-demo ，[先要创建org]( https://www.npmjs.com/org/create)，具体参考[官方文档](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages) 
-- 在根目录创建.npmrc，内容为 //registry.npmjs.org/:_authToken=<`token`>，方便提交到npm
+## Prelude
+- If using scope @lerna-demo ，[first create org]( https://www.npmjs.com/org/create)，specific reference [official document](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages) 
+- Create .npmrc in the root directory with the content //registry.npmjs.org/:_authToken=<`token`>，easy to submit to npm
 
-## 命令
-#### yarn开启工作空间
+## Command
+#### Yarn Open workspace
 `yarn config set workspaces-experimental true`
 
-#### 安装依赖
+#### Installation dependency
 `yarn`
 
-#### 添加新的包到依赖，注意加入`-W`
+#### Add a new package to the dependency, pay attention to join`-W`
 `yarn add *any_pack* -W`
 
-#### 编译所有包
-`npm run build`
+#### Compile the package that changed
+`npm run build:changed`
 
-#### 编译所有包同时监视
+#### Compile all packages
+`npm run build:all`
+
+#### Compile all packages while monitoring
 `npm run build:w`
 
-#### 启动storybook
+#### Start the storybook
 `npm run storybook`
-打开 http://localhost:6006
+open http://localhost:6006
 
-#### 启动jest监视，结果输出到.jest-test-results.json
-如果storybook需要显示jest结果，则要执行该命令  
-`npm run test:generate-output`
-
-#### 格式化ts
+#### Format ts
 `npm run tslint`
 
-#### 发布到npm
+#### Publish to npm
 `npm run release`
 
-## 特性
+## Characteristic
 - `lerna`  √
 - `tslint`  √
 - `stylelint`  √
 - `storybook`  √
 - `push to npm` √
-- `jest` √
 - `husky` √
 - `lint-staged` √
 
-## 发布
-> 要打上标签，`lerna diff`对比的是上个打上标签的提交，和最后提交这俩个提交进行对比的
-> 所以，建议每次发布都打上标签如 v0.0.1，v0.0.2之类的，Annotated Tags语句
+## Release
+> To tag, `lerna diff` compares the last tagged submission, and finally submits the two submissions for comparison.
+> Therefore, it is recommended that each release be tagged with an Annotated Tags statement such as v0.0.1, v0.0.2
 
 #### .npmrc
-填写`token`到`.npmrc`中，内容如下
+fill in `token` to `.npmrc` as follows
 `//registry.npmjs.org/:_authToken=.................`
 
 #### Annotated Tags
 `git tag -a v0.0.1 -m "my version 0.0.1"`
 
-如果没有上Annotated Tags，`lerna changed`会无法找到改变的包，因为本质是使用`git describe`命令
+If there is no Annotated Tags, `lerna changed` will not be able to find the changed package, because the essence is to use the `git describe` command.
 
-- 没有加入Annotated Tags
+- Did not join Annotated Tags
 ```log
-fatal: No annotated tags can describe 'f87c255432d4fa4656ef37f9f28bdd94f6b55fa5'
+Fatal: No annotated tags can describe 'f87c255432d4fa4656ef37f9f28bdd94f6b55fa5'
 .
 However, there were unannotated tags: try --tags.
 ```
 
-- 加入tag
+- Join the tag
 ```log
 D:\project-demo\yarn-workspaces-demo>git describe
-v0.0.1
+V0.0.1
 ```
 
 #### --no-git-tag-version
-- `lerna publish --no-git-tag-version`：取消自动打标签，`lerna`不会自动更新包的版本了
-`pack1`版本是`0.0.1`，推送到`npm`后，本地依旧是`0.0.1`
-- `lerna publish`：自动更新包的版本，为最后的提交打上每个包的版本标签，然后再推送
+- `lerna publish --no-git-tag-version`: Cancel automatic tagging, `lerna` will not automatically update the version of the package.
+`pack1` version is `0.0.1`, after pushing to `npm`, the local is still `0.0.1`
+- `lerna publish`: automatically update the version of the package, mark the last commit for each package, and then push
 
-lerna只会找当前的分支进行标签对比，然后判断是否要发布，如果标签打在其他分支上面，lerna会忽略
+Lerna will only find the current branch for label comparison, and then judge whether to publish, if the label is on other branches, lerna will ignore
 
 #### --no-git-reset
-- `lerna publish --no-git-reset`:`lerna`自动更新包的版本了
-- `lerna publish`:`lerna`根据上个标签的更新包的版本
+- `lerna publish --no-git-reset`:`lerna` automatically updates the version of the package
+- `lerna publish`:`lerna` according to the version of the update package of the previous tab
+
+## Unit test
+[mocha-examples](https://github.com/mochajs/mocha-examples)
