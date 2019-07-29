@@ -1,4 +1,6 @@
 {
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": ["*.tsx"],
   "plugins": [
     "stylelint-scss"
   ],
@@ -16,6 +18,5 @@
       }
     ],
     "scss/at-rule-no-unknown": true
-  },
-  "extends": "stylelint-config-standard"
+  }
 }
