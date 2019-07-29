@@ -17,7 +17,6 @@
   "scripts": {
     "build:changed": "ts-node rollup.build.ts --type changed",
     "build:all": "ts-node rollup.build.ts --type all",
-    "build": "rollup -c rollup.config.js",
     "build:w": "rollup -c rollup.config.js -w",
     "tslint": "tslint --fix packages/**/*{.ts,.tsx} .storybook/*.ts stories/**/*{.ts,.tsx} webpack-ts/**/* config/*.ts",
     "stylelint": "stylelint --fix packages/**/*.scss",
