@@ -1,23 +1,22 @@
 {
-  "trailingComma": "es5",
-  "printWidth": 80,
-
-  "parser": "typescript",
-  "semi": false,
   "arrowParens": "always",
-  "useTabs": false,
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
-  "tabWidth": 2,
+  "parser": "typescript",
+  "printWidth": 80,
+  "semi": false,
   "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
   "overrides": [{
     "files": [
+      "!**/dist",
       ".storybook/*.ts",
       "packages/**/*.ts",
-      "webpack-ts/**/*.ts",
       "stories/**/*.tsx",
       "util/*.ts",
-      "!**/dist"
+      "webpack-ts/**/*.ts"
     ],
     "options": {
       "trailingComma": "all"

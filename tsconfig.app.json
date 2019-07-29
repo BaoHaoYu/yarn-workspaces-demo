@@ -1,9 +1,9 @@
 {
   "extends": "./config/tsconfig.common.json",
   "compilerOptions": {
-    "module": "esnext",
     "baseUrl": ".",
     "declaration": true,
+    "module": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
