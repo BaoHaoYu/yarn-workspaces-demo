@@ -1,10 +1,10 @@
 *.log
-.rpt2_cache
 .idea/
 .npmrc
 .nyc_output
-
-node_modules
-dist
-yarn-error.log
+.rpt2_cache
 coverage/
+dist
+storybook-static
+node_modules
+yarn-error.log

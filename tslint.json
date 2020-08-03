@@ -6,10 +6,10 @@
     "tslint-config-prettier"
   ],
   "rules": {
-    "object-literal-sort-keys": false,
     "no-console": false,
-    "prettier": true,
-    "no-floating-promises": false
+    "no-floating-promises": false,
+    "object-literal-sort-keys": false,
+    "prettier": true
   },
   "rulesDirectory": ["tslint-plugin-prettier"],
   "linterOptions": {
